@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import cen4010.pa1.Vector3D;
 
 class Vector3DTest {
-
-	
 	
 	@Test
 	void testMagnitude() {
@@ -18,13 +16,26 @@ class Vector3DTest {
 		
 	}
 	
-
-	
 	@Test
 	void testDot() {
 		Vector3D vector = new Vector3D(2,3,6);
 		Vector3D vector2 = new Vector3D(1,4,7);
 		double result = vector.dot(vector2);
 		assertEquals(result,56);
+	}
+	
+	@Test
+	void testToString() {
+		Vector3D vec = new Vector3D(1,2,3);
+		assertEquals("x: 1.0\ny: 2.0\nz: 3.0\n", vec.toString());
+	}
+	
+	@Test
+	void testEquals() {
+		Vector3D vec = new Vector3D(1.01234,2.12345,3.23456);
+		assertEquals(true, vec.equals(new Vector3D(1.01234,2.12345,3.23456)));
+		
+		// test threshold
+		assertEquals(true, vec.equals(new Vector3D(1.01233,2.12344,3.23455)));
 	}
 }
