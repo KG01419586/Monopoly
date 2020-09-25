@@ -10,9 +10,7 @@ public final class Vector3D {
 		this.x = x;
 		this.y = y;
 		this.z = z;
-	}
-
-	
+	}	
 
 	public double dot(Vector3D v) {
 		return (this.x * v.x) + (this.y * v.y) + (this.z * v.z);
@@ -21,6 +19,19 @@ public final class Vector3D {
 	public double magnitude() {
 		return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2) + Math.pow(this.z, 2));
 	}
+	
+	public String toString() {
+		return "x: " + this.x + "\ny: " + this.y + "\nz: " + this.z + "\n";
+	}
 
-
+	public boolean equals(Vector3D v) {
+		final double EPSILON = 0.0001;
+		if (Math.abs(this.x - v.x) > EPSILON)
+			return false;
+		if (Math.abs(this.y - v.y) > EPSILON)
+			return false;
+		if (Math.abs(this.z - v.z) > EPSILON)
+			return false;
+		return true;
+	}
 }
