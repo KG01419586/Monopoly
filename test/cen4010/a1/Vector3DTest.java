@@ -38,4 +38,11 @@ class Vector3DTest {
 		// test threshold
 		assertEquals(true, vec.equals(new Vector3D(1.01233,2.12344,3.23455)));
 	}
+	
+	@Test
+	void testScale() {
+		Vector3D vector=new Vector3D(2,1,7);
+		Vector3D result =vector.scale(1.5);
+		assertEquals(true, result.equals(new Vector3D(3,1.5,10.5)));
+	}
 }

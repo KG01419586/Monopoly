@@ -34,4 +34,8 @@ public final class Vector3D {
 			return false;
 		return true;
 	}
+	
+	public Vector3D scale(double f) {
+		return new Vector3D(x * f, y * f, z * f);
+	}
 }
