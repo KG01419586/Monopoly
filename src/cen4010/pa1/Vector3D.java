@@ -38,4 +38,17 @@ public final class Vector3D {
 	public Vector3D scale(double f) {
 		return new Vector3D(x * f, y * f, z * f);
 	}
+	
+	public Vector3D add(Vector3D v) {
+		return new Vector3D(this.x + v.x, this.y + v.y, this.z + v.z);
+	}
+
+	public Vector3D subtract(Vector3D v) {
+		return new Vector3D(this.x - v.x, this.y - v.y, this.z - v.z);
+	}
+
+	public Vector3D negate() {
+		return new Vector3D(-this.x, -this.y, -this.z);
+	}
+	
 }

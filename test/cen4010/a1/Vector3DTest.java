@@ -45,4 +45,28 @@ class Vector3DTest {
 		Vector3D result =vector.scale(1.5);
 		assertEquals(true, result.equals(new Vector3D(3,1.5,10.5)));
 	}
+	
+	@Test
+	void testAdd() {
+		Vector3D vector = new Vector3D(1,2,3);
+		Vector3D vector2 = new Vector3D(1,1,1);
+		Vector3D result=vector.add(vector2);
+		assertEquals(true,result.equals(new Vector3D(2.0,3.0,4.0)));
+		
+	}
+	
+	@Test
+	void testSub() {
+		Vector3D vector = new Vector3D(3,3,3);
+		Vector3D vector2 = new Vector3D(1,1,1);
+		Vector3D result=vector.subtract(vector2);
+		assertEquals(true, result.equals(new Vector3D(2,2,2)));
+	}
+	
+	@Test
+	void testNegate() {
+		Vector3D vector=new Vector3D(4.2,8.1,3.7);
+		Vector3D result = vector.negate();
+		assertEquals(true, result.equals(new Vector3D(-4.2,-8.1,-3.7)));
+	}
 }
