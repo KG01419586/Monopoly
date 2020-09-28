@@ -1,0 +1,19 @@
+Team Members:
+Kevin Grindstaff
+Milad Karimi
+Kevin Lomax
+
+Notes:
+Since the Vector3D class was easy to write not much was put into design of the code and everything was straightforward.
+The hardest part was setting up the environment. 
+Since this is a new environment for some of our members learning how to use Eclipse, JUnit, and Git, in tandem was what we got the most out of this assignment.
+
+Contributions:
+Milad contributed by starting the assignment for the group adding the initial code, tests, and methods, then later refining some of that code.
+Spending around 180 minutes in total on the assignment.
+
+Kevin G contributed by getting our team's GitHub repo setup properly and adding a good portion of the methods and tests.
+Spending about 180 minutes in total on the assignment. 
+
+Kevin L contributed by adding the rest of the needed code to the repo and writing the overview.txt file. 
+Spending around 120 minutes in total on the assignment.
