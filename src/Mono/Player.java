@@ -86,7 +86,6 @@ public class Player {
 
 	public void free() {
 		this.inJail = false;
-
+		setJailRolls(0);
 	}
-
 }
