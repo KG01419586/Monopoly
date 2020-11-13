@@ -8,7 +8,9 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics2D;
+import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Label;
@@ -21,6 +23,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -36,14 +40,13 @@ import javax.swing.border.EtchedBorder;
 
 public class Startup extends JFrame implements ActionListener, MouseListener {
 
-	
+	Contenders[] contenders;
 
-	
 	Integer numOfPlayers;
 	Integer p = 0;
 	Integer w = 3;
 	Integer h = 3;
-
+	JLabel RS = new JLabel("Error indicator");
 	// addPlayersPane components
 	TextField p1Field = new TextField("PLAYER 1");
 	TextField p2Field = new TextField("PLAYER 2");
@@ -92,15 +95,20 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		this.setLocationRelativeTo(null);
 
 		this.add(iconBoxPane());
-		//this.add(infoBoxPane());
 		this.add(addPlayerPane());
 		this.setVisible(true);
-		
+
 	}
 
 	private JPanel addPlayerPane() {
 
 		numOfPlayers = 2;
+		contenders = new Contenders[4];
+		contenders[0] = null;
+		contenders[1] = null;
+		contenders[2] = null;
+		contenders[3] = null;
+
 		JPanel addPlayersPane = new JPanel();
 		addPlayersPane.setBorder(BorderFactory.createEtchedBorder());
 		addPlayersPane.setBackground(new Color(0X1a1a1a));
@@ -178,6 +186,18 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		p4Field.hide();
 		p3Label.hide();
 		p4Label.hide();
+		
+
+		// RS: Red Start: indication for empty or duplicate fields and icons.
+		RS.setSize(10, 10);
+		RS.setLocation(5, 5);
+		RS.setText("*");
+		RS.setBackground(new Color(0X1a1a1a));
+		RS.setForeground(Color.red);
+		RS.setOpaque(true);
+		this.add(RS);
+		RS.hide();
+
 
 		addButton.setSize(w * 25, h * 10);
 		nextButton.setSize(w * 25, h * 10);
@@ -222,79 +242,6 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		this.add(nextButton);
 
 		return addPlayersPane;
-	}
-	/*
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 */
-
-	private JPanel infoBoxPane() {
-
-		JPanel infoBoxPane = new JPanel();
-		infoBoxPane.setBorder(BorderFactory.createEtchedBorder());
-		infoBoxPane.setBackground(new Color(0X1a1a1a));
-		infoBoxPane.setBounds(300, 0, 300, 300);
-
-		// addPlayersPane components
-		JLabel p1Label = new JLabel();
-		JLabel p2Label = new JLabel();
-		JLabel p3Label = new JLabel();
-		JLabel p4Label = new JLabel();
-		ImageIcon p1ImageIcon = new ImageIcon();
-		ImageIcon p2ImageIcon = new ImageIcon();
-		ImageIcon p3ImageIcon = new ImageIcon();
-		ImageIcon p4ImageIcon = new ImageIcon();
-		JButton rollButton = new JButton("Roll");
-
-		p1Label.setSize(w * 70, h * 10);
-		p2Label.setSize(w * 70, h * 10);
-		p3Label.setSize(w * 70, h * 10);
-		p4Label.setSize(w * 70, h * 10);
-
-		p1Label.setLocation(infoBoxPane.getLocation().x + (w * 5), infoBoxPane.getLocation().y + (h * 10));
-		p2Label.setLocation(infoBoxPane.getLocation().x + (w * 5), infoBoxPane.getLocation().y + (h * 25));
-		p3Label.setLocation(infoBoxPane.getLocation().x + (w * 5), infoBoxPane.getLocation().y + (h * 40));
-		p4Label.setLocation(infoBoxPane.getLocation().x + (w * 5), infoBoxPane.getLocation().y + (h * 55));
-
-		p1Label.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
-		p2Label.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
-		p3Label.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
-		p4Label.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
-
-		p1Label.setFont(new Font("MV Boli", Font.PLAIN, 16));
-		p2Label.setFont(new Font("MV Boli", Font.PLAIN, 16));
-		p3Label.setFont(new Font("MV Boli", Font.PLAIN, 16));
-		p4Label.setFont(new Font("MV Boli", Font.PLAIN, 16));
-
-		p1Label.setForeground(new Color(0Xff0000)); // RED
-		p2Label.setForeground(new Color(0X00ff00)); // GREEN
-		p3Label.setForeground(new Color(0X0066ff)); // BLUE
-		p4Label.setForeground(new Color(0Xff1a8c)); // PURPLE
-
-		p1Label.setText(" 1. PLAYER 1");
-		p2Label.setText(" 2. I am GREEN");
-		p3Label.setText(" 3. AK47");
-		p4Label.setText(" 4. Tuna can");
-
-		p1Label.setBackground(infoBoxPane.getBackground());
-		p2Label.setBackground(infoBoxPane.getBackground());
-		p3Label.setBackground(infoBoxPane.getBackground());
-		p4Label.setBackground(infoBoxPane.getBackground());
-
-		p1Label.setOpaque(true);
-		p2Label.setOpaque(true);
-		p3Label.setOpaque(true);
-		p4Label.setOpaque(true);
-
-		this.add(p1Label);
-		this.add(p2Label);
-		this.add(p3Label);
-		this.add(p4Label);
-
-		return infoBoxPane;
 	}
 
 	/**
@@ -432,6 +379,7 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			numOfPlayers = 2;
 			p = 3;
 
+			int counter = 4;
 			addButton.setLocation(w * 50, h * 35);
 			addButton.show();
 
@@ -439,7 +387,6 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			p2Field.setText("PLAYER 2");
 			p3Field.setText("PLAYER 3");
 			p4Field.setText("PLAYER 4");
-
 			// reset icons
 			p1Label.setBackground(new Color(0X1a1a1a));
 			p2Label.setBackground(new Color(0X1a1a1a));
@@ -471,6 +418,118 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		}
 
 		if (e.getSource() == nextButton) {
+			iconPane.hide();
+			RS.hide();
+
+			/*
+			 * look for empty slots
+			 */
+			if (p1Field.getText().trim().length() == 0 || contenders[0] == null) {
+				p1Field.selectAll();
+				RS.setLocation(5, 5);
+				RS.show();
+				return;
+			} else if (p2Field.getText().trim().length() == 0 || contenders[1] == null) {
+				p2Field.selectAll();
+				RS.setLocation(5, 69);
+				RS.show();
+				return;
+			} else if (p3Field.isShowing() && (p3Field.getText().trim().length() == 0 || contenders[2] == null)) {
+				p3Field.selectAll();
+				RS.setLocation(5, 126);
+				RS.show();
+				return;
+			} else if (p4Field.isShowing() && (p4Field.getText().trim().length() == 0 || contenders[3] == null)) {
+				p4Field.selectAll();
+				RS.setLocation(5, 177);
+				RS.show();
+				return;
+			}
+
+			/*
+			 * look for duplicate slots
+			 */
+			// compare p1 & p2
+			if (p1Field.getText().equals(p2Field.getText())) {
+				p2Field.selectAll();
+				RS.setLocation(5, 69);
+				RS.show();
+
+			} else if (contenders[0].pIcon.equals(contenders[1].pIcon)) {
+				p2Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
+				p = 2;
+				iconPane.show();
+				RS.setLocation(5, 69);
+				RS.show();
+			} 
+			// compare p1 & p3
+			if (p3Field.isShowing() && p1Field.getText().equals(p3Field.getText())) {
+				p3Field.selectAll();
+				RS.setLocation(5, 126);
+				RS.show();
+
+			} else if (p3Field.isShowing() && contenders[0].pIcon.equals(contenders[2].pIcon)) {
+				p3Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
+				p = 3;
+				iconPane.show();
+				RS.setLocation(5, 126);
+				RS.show();
+			} 
+			// compare p1 & p4
+			if (p4Field.isShowing() && p1Field.getText().equals(p4Field.getText())) {
+				p4Field.selectAll();
+				RS.setLocation(5, 177);
+				RS.show();
+
+			} else if (p4Field.isShowing() && contenders[0].pIcon.equals(contenders[3].pIcon)) {
+				p4Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
+				p = 4;
+				iconPane.show();
+				RS.setLocation(5, 177);
+				RS.show();
+			}
+			// compare p2 & p3
+			if (p3Field.isShowing() && p2Field.getText().equals(p3Field.getText())) {
+				p3Field.selectAll();
+				RS.setLocation(5, 126);
+				RS.show();
+
+			} else if (p3Field.isShowing() && contenders[1].pIcon.equals(contenders[2].pIcon)) {
+				p3Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
+				p = 3;
+				iconPane.show();
+				RS.setLocation(5, 126);
+				RS.show();
+			}
+			// compare p2 & p4
+			if (p4Field.isShowing() && p2Field.getText().equals(p4Field.getText())) {
+				p4Field.selectAll();
+				RS.setLocation(5, 177);
+				RS.show();
+
+			} else if (p4Field.isShowing() && contenders[1].pIcon.equals(contenders[3].pIcon)) {
+				p4Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
+				p = 4;
+				iconPane.show();
+				RS.setLocation(5, 177);
+				RS.show();
+			}
+			// compare p3 & p4
+			if (p4Field.isShowing() && p3Field.getText().equals(p4Field.getText())) {
+				p4Field.selectAll();
+				RS.setLocation(5, 177);
+				RS.show();
+
+			} else if (p4Field.isShowing() && contenders[2].pIcon.equals(contenders[3].pIcon)) {
+				p4Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
+				p = 4;
+				iconPane.show();
+				RS.setLocation(5, 177);
+				RS.show();
+			}
+
+			backButton.enable();
+
 		}
 
 	}
@@ -546,14 +605,6 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			p = 0;
 			iconPane.hide();
 		}
-		
-		if(e.getSource() == nextButton) {
-			//TODO: if icon is not set or text field is empty, highlight text in text field
-			
-			//TODO: 
-			iconPane.hide();
-			
-		}
 
 	}
 
@@ -619,7 +670,7 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		
+
 		if (e.getSource() == p1Label)
 			p1Label.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		if (e.getSource() == p2Label)
@@ -678,7 +729,7 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 
 	}
 
-	 static ImageIcon loadImage(String src, Integer Width, Integer Height) {
+	static ImageIcon loadImage(String src, Integer Width, Integer Height) {
 		if (Width == 0 && Height == 0)
 			return new ImageIcon("src/Mono/GUI/Img/" + src);
 		BufferedImage img = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_ARGB);
@@ -694,22 +745,38 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		switch (p) {
 		case 1:
 			p1Label.setIcon(loadImage(src, Width, Height));
+			contenders[0] = new Contenders("", src, Color.RED);
 			p = 0;
 			break;
 		case 2:
 			p2Label.setIcon(loadImage(src, Width, Height));
+			contenders[1] = new Contenders("", src, Color.GREEN);
 			p = 0;
 			break;
 		case 3:
 			p3Label.setIcon(loadImage(src, Width, Height));
+			contenders[2] = new Contenders("", src, Color.BLUE);
 			p = 0;
 			break;
 		case 4:
 			p4Label.setIcon(loadImage(src, Width, Height));
+			contenders[3] = new Contenders("", src, Color.MAGENTA);
 			p = 0;
 			break;
 
 		}
 
+	}
+
+	private class Contenders {
+		String pName;
+		String pIcon;
+		Color pColor;
+
+		Contenders(String name, String src, Color color) {
+			pName = name;
+			pIcon = src;
+			pColor = color;
+		}
 	}
 }
