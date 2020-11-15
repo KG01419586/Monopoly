@@ -11,6 +11,7 @@ class Mono_Test {
 	@Test
 	void testBoard() {
 		Board board = new Board();
+		board.updatePlayerPosition();
 		while(true);
 	}
 
