@@ -3,7 +3,9 @@ package Mono;
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
-import javax.swing.*; 
+import javax.swing.*;
+
+import Mono.GUI.SidePanel; 
 
 public class Board extends JPanel
 {  
@@ -31,6 +33,11 @@ public class Board extends JPanel
 	    prompts.setFont(new Font("impact",Font.PLAIN,25));
 	    frame.add(map);
 	    frame.add(prompts, BorderLayout.SOUTH);
+	    
+	    /*temporary testing for sidepanel*/
+	    SidePanel sidepanel = new SidePanel();
+	    frame.add(sidepanel, BorderLayout.EAST);
+	    
 	    frame.pack();
 	    frame.setVisible(true);	    
 	}  
