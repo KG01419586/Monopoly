@@ -12,6 +12,7 @@ class Mono_Test {
 	void testBoard() {
 		Board board = new Board();
 		board.updatePlayerPosition();
+		board.updateTextField("Test Complete");
 		while(true);
 	}
 

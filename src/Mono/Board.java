@@ -9,6 +9,7 @@ public class Board extends JPanel
 {  
 	 private JFrame frame = new JFrame("Monopoly");
 	 private JPanel map = new JPanel();
+	 private JTextField prompts=new JTextField();
 	 private ImageIcon mono = new ImageIcon(new ImageIcon("../T3/images/monopoly_board.jpg").getImage().getScaledInstance(1020, 1020, Image.SCALE_SMOOTH));
 	 private ImageIcon house = new ImageIcon(new ImageIcon("../T3/images/house.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
 	 private ImageIcon hotel = new ImageIcon(new ImageIcon("../T3/images/hotel.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
@@ -26,7 +27,10 @@ public class Board extends JPanel
 	    map.setBackground(new Color(204,  255, 238)); 
 	    setGrid();
 	    map.add(label); 
+	    prompts.setHorizontalAlignment(JTextField.CENTER);
+	    prompts.setFont(new Font("impact",Font.PLAIN,25));
 	    frame.add(map);
+	    frame.add(prompts, BorderLayout.SOUTH);
 	    frame.pack();
 	    frame.setVisible(true);	    
 	}  
@@ -40,8 +44,6 @@ public class Board extends JPanel
 	    	{
 	    		JButton button = new JButton();
 	    		button.setContentAreaFilled(false);
-	    		button.setFocusPainted(false);
-	    		button.setFocusable(false);
 	    		button.setBorderPainted(false);
 	    		label.add(button);
 	    		gridSpots[i][j]=button;
@@ -57,9 +59,10 @@ public class Board extends JPanel
 	
 	public void updatePlayerPosition() 
 	{
-	    /* Icon Testing
+	    /* Icon Testing / Game Prompt Testing
 	     * 
 	     */ 
+		
 		gridSpots[2][7].setIcon(boot);
 	    gridSpots[2][8].setIcon(ship);
 	    gridSpots[1][7].setIcon(iron);
@@ -73,6 +76,7 @@ public class Board extends JPanel
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	    updateTextField("Rolling 3");
 	    gridSpots[2][8].setIcon(null);
 	    try {
 			TimeUnit.SECONDS.sleep(1);
@@ -95,5 +99,21 @@ public class Board extends JPanel
 		}
 	    gridSpots[2][16].setIcon(null);
 	    gridSpots[2][20].setIcon(ship);
+	    updateTextField(null);
+	}
+	
+	public void displayRoll() 
+	{
+		
+	}
+	
+	public void displayBuyHouse() 
+	{
+		
+	}
+	
+	public void updateTextField(String text) 
+	{
+		prompts.setText(text);
 	}
 }
