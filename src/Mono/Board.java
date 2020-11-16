@@ -64,49 +64,233 @@ public class Board extends JPanel
 
 	}
 	
-	public void updatePlayerPosition() 
+	public int[] updatePlayerPosition(int roll, int[] pos) 
 	{
-	    /* Icon Testing / Game Prompt Testing
-	     * 
-	     */ 
-		
-		gridSpots[2][7].setIcon(boot);
-	    gridSpots[2][8].setIcon(ship);
-	    gridSpots[1][7].setIcon(iron);
-	    gridSpots[1][8].setIcon(dog);   
-	    gridSpots[5][6].setIcon(house);
-	    gridSpots[5][7].setIcon(house);
-	    gridSpots[5][8].setIcon(house);
-	    gridSpots[5][9].setIcon(house);
-	    try {
-			TimeUnit.SECONDS.sleep(2);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		for(int i=0; i<roll; i++) 
+		{
+			try 
+			{
+				TimeUnit.SECONDS.sleep(1);
+			} 
+			catch (InterruptedException e) 
+			{
+				e.printStackTrace();
+			}
+			
+//process for moving player along the top of the board
+			if(pos[0]<=2 && pos[1]<=42) 
+			{
+				//checks for ship
+				if(pos[0]%2 ==0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[1]+=4;
+					gridSpots[pos[0]][pos[1]].setIcon(ship);
+					continue;
+					
+				}
+				//checks for boot
+				else if(pos[0]%2==0 &&pos[1]%2!=0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[1]+=4;
+					gridSpots[pos[0]][pos[1]].setIcon(boot);
+					continue;
+				}
+				//checks for dog
+				else if(pos[0]%2!=0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[1]+=4;
+					gridSpots[pos[0]][pos[1]].setIcon(dog);
+					continue;
+				}
+				//checks for iron
+				else 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[1]+=4;
+					gridSpots[pos[0]][pos[1]].setIcon(iron);
+					continue;
+				}
+			}
+			
+//process for exiting Go To Jail tile
+			else if(pos[0]<=2 && pos[1]>=43) 
+			{
+				//checks for ship
+				if(pos[0]%2 ==0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]+=6;
+					gridSpots[pos[0]][pos[1]].setIcon(ship);
+					
+				}
+				//checks for boot
+				else if(pos[0]%2==0 &&pos[1]%2!=0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]+=6;
+					gridSpots[pos[0]][pos[1]].setIcon(boot);
+					continue;
+				}
+				//checks for dog
+				else if(pos[0]%2!=0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]+=6;
+					gridSpots[pos[0]][pos[1]].setIcon(dog);
+				}
+				//checks for iron
+				else 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]+=6;
+					gridSpots[pos[0]][pos[1]].setIcon(iron);
+				}
+			}
+			
+//process for moving player along the right side of the board
+			else if(pos[0]<=42 && pos[1]>=43) 
+			{
+				//checks for ship
+				if(pos[0]%2 ==0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]+=4;
+					gridSpots[pos[0]][pos[1]].setIcon(ship);
+					
+				}
+				//checks for boot
+				else if(pos[0]%2==0 &&pos[1]%2!=0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]+=4;
+					gridSpots[pos[0]][pos[1]].setIcon(boot);
+					continue;
+				}
+				//checks for dog
+				else if(pos[0]%2!=0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]+=4;
+					gridSpots[pos[0]][pos[1]].setIcon(dog);
+				}
+				//checks for iron
+				else 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]+=4;
+					gridSpots[pos[0]][pos[1]].setIcon(iron);
+				}
+			}
+			
+//process for moving player along the bottom of the board
+			else if(pos[0]>=42 && pos[1]>=5) 
+			{
+				//checks for ship
+				if(pos[0]%2 ==0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[1]-=4;
+					gridSpots[pos[0]][pos[1]].setIcon(ship);
+					
+				}
+				//checks for boot
+				else if(pos[0]%2==0 &&pos[1]%2!=0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[1]-=4;
+					gridSpots[pos[0]][pos[1]].setIcon(boot);
+					continue;
+				}
+				//checks for dog
+				else if(pos[0]%2!=0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[1]-=4;
+					gridSpots[pos[0]][pos[1]].setIcon(dog);
+				}
+				//checks for iron
+				else 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[1]-=4;
+					gridSpots[pos[0]][pos[1]].setIcon(iron);
+				}
+			}
+			
+//process for exiting Jail Tile
+			else if((pos[0]==8 || pos[0]==7) && pos[1]<=5) 
+			{
+				//checks for ship
+				if(pos[0]%2 ==0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]-=6;
+					gridSpots[pos[0]][pos[1]].setIcon(ship);
+					
+				}
+				//checks for boot
+				else if(pos[0]%2==0 &&pos[1]%2!=0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]-=6;
+					gridSpots[pos[0]][pos[1]].setIcon(boot);
+					continue;
+				}
+				//checks for dog
+				else if(pos[0]%2!=0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]-=6;
+					gridSpots[pos[0]][pos[1]].setIcon(dog);
+				}
+				//checks for iron
+				else 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]-=6;
+					gridSpots[pos[0]][pos[1]].setIcon(iron);
+				}
+			}
+//process for moving player along the left side of the board
+			else if(pos[0]>=3 && pos[1]<=4) 
+			{
+				//checks for ship
+				if(pos[0]%2 ==0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]-=4;
+					gridSpots[pos[0]][pos[1]].setIcon(ship);
+					
+				}
+				//checks for boot
+				else if(pos[0]%2==0 &&pos[1]%2!=0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]-=4;
+					gridSpots[pos[0]][pos[1]].setIcon(boot);
+					continue;
+				}
+				//checks for dog
+				else if(pos[0]%2!=0 && pos[1]%2==0) 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]-=4;
+					gridSpots[pos[0]][pos[1]].setIcon(dog);
+				}
+				//checks for iron
+				else 
+				{
+					gridSpots[pos[0]][pos[1]].setIcon(null);
+					pos[0]-=4;
+					gridSpots[pos[0]][pos[1]].setIcon(iron);
+				}
+			}
+
 		}
-	    updateTextField("Rolling 3");
-	    gridSpots[2][8].setIcon(null);
-	    try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	    gridSpots[2][12].setIcon(ship);
-	    try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	    gridSpots[2][12].setIcon(null);
-	    gridSpots[2][16].setIcon(ship);
-	    try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	    gridSpots[2][16].setIcon(null);
-	    gridSpots[2][20].setIcon(ship);
-	    updateTextField(null);
+	    return pos;
 	}
 	
 	public void displayRoll() 
@@ -123,4 +307,5 @@ public class Board extends JPanel
 	{
 		prompts.setText(text);
 	}
+
 }
