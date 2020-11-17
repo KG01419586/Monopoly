@@ -9,6 +9,8 @@ import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
@@ -21,8 +23,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 
-public class SidePanel extends JPanel {
+import Mono.Dice;
 
+
+public class SidePanel extends JPanel {
+	private JButton rollButton = new JButton("ROLL!");
+	private int roll;
+	private boolean clicked=false;
 	public SidePanel() {
 		this.setLayout(new BorderLayout());
 
@@ -56,9 +63,10 @@ public class SidePanel extends JPanel {
 		rollBox.setPreferredSize(new Dimension(200, 100));
 		rollBox.setBackground(new Color(0X1a1a1a));
 		rollBox.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
-
-		JButton rollButton = new JButton("ROll!");
-
+		
+		
+		
+		
 		rollBox.add(rollButton);
 		return rollBox;
 	}
@@ -66,4 +74,24 @@ public class SidePanel extends JPanel {
 	private JPanel createTimerPane(int timeLimit) {
 		return new TimerBox(timeLimit);
 	}
+	public int getRoll() 
+	{
+		
+		while(clicked==false) 
+		{
+		    rollButton.addActionListener(new ActionListener() 
+		    {
+		        
+		        @Override
+		        public void actionPerformed(ActionEvent e) 
+		        {             
+		           roll = Dice.roll();
+		           clicked= true;             
+		        }
+		    });
+		}
+
+		return roll;
+	}
+
 }

@@ -21,6 +21,7 @@ public class Board extends JPanel
 	 private ImageIcon dog = new ImageIcon(new ImageIcon("../T3/images/dog.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
 	 private JLabel label = new JLabel(mono);
 	 private JButton[][] gridSpots = new JButton[48][48];  
+	 private SidePanel sidepanel = new SidePanel();
 	 
 	public Board() 
 	{
@@ -32,10 +33,7 @@ public class Board extends JPanel
 	    prompts.setHorizontalAlignment(JTextField.CENTER);
 	    prompts.setFont(new Font("impact",Font.PLAIN,25));
 	    frame.add(map);
-	    frame.add(prompts, BorderLayout.SOUTH);
-	    
-	    /*temporary testing for sidepanel*/
-	    SidePanel sidepanel = new SidePanel();
+	    frame.add(prompts, BorderLayout.SOUTH);   
 	    frame.add(sidepanel, BorderLayout.EAST);
 	    
 	    frame.pack();
@@ -293,10 +291,7 @@ public class Board extends JPanel
 	    return pos;
 	}
 	
-	public void displayRoll() 
-	{
-		
-	}
+
 	
 	public void displayBuyHouse() 
 	{
@@ -306,6 +301,14 @@ public class Board extends JPanel
 	public void updateTextField(String text) 
 	{
 		prompts.setText(text);
+	}
+
+	public int getRoll() 
+	{
+		int roll;
+		roll=sidepanel.getRoll();
+		updateTextField("Rolling a " + roll);
+		return roll;
 	}
 
 }
