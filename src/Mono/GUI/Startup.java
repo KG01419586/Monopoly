@@ -38,6 +38,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
 
+import Mono.Game;
+
 public class Startup extends JFrame implements ActionListener, MouseListener {
 
 	Contenders[] contenders;
@@ -89,7 +91,7 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		// startup frame
 		new JFrame("Monopoly");
 		this.setLayout(null);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		this.setResizable(false);
 		this.setSize(Width, Height);
 		this.setLocationRelativeTo(null);
@@ -419,7 +421,9 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 
 		if (e.getSource() == nextButton) {
 			iconPane.hide();
+			//iconPane.setVisible(false);
 			RS.hide();
+			//RS.setVisible(false);
 
 			/*
 			 * look for empty slots
@@ -529,6 +533,8 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			}
 
 			backButton.enable();
+			this.setVisible(false);
+			Game.showBoard();
 
 		}
 
