@@ -13,6 +13,7 @@ public class Player {
 	private Boolean inJail;
 	private ArrayList<String> properties = new ArrayList<String>();
 	private Integer roll;
+	private String name;
 
 	public Player() {
 		doubles = 0;
@@ -24,6 +25,14 @@ public class Player {
 	public String getToken() 
 	{
 		return this.token;
+	}
+	public void setName(String name) 
+	{
+		this.name = name;
+	}
+	public String getName() 
+	{
+		return this.name;
 	}
 
 	public Integer[] getPosition() {

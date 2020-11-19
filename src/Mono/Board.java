@@ -953,7 +953,7 @@ public class Board extends JPanel
 			}
 
 		}
-		updateTextField("Rolled a " + roll);
+		
 	    return integers;
 	}
 	
@@ -991,10 +991,7 @@ public class Board extends JPanel
 	public void showBoard() 
 	{
 		frame.setVisible(true);
-	}
-	
-
-	
+	}		
 
 }
 
