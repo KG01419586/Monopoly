@@ -20,6 +20,7 @@ public class Game {
 	static Player player3 = new Player();
 	static Player player4 = new Player();
 	static int roll;
+	
 
 	
 	public Integer setTimeLimit() {
@@ -220,6 +221,27 @@ public class Game {
 		board.updateTextField(player1.getName()+", Your turn.");
 	}
 
+	public static void manageProperty() 
+	{
+		switch(turn)
+		{
+		case 1:
+			player1.setProperties("baltic");
+			player1.setProperties("board");
+			board.displayBuyHouse(player1.getProperties());
+			break;
+		case 2:
+			board.displayBuyHouse(player2.getProperties());
+			break;
+		case 3:
+			board.displayBuyHouse(player3.getProperties());
+			break;
+		case 4:
+			board.displayBuyHouse(player4.getProperties());
+			break;
+			
+		}
+	}
 
 
 }

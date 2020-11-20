@@ -11,7 +11,7 @@ public class Player {
 	private Integer doubles;
 	private Integer jailRolls;
 	private Boolean inJail;
-	private ArrayList<String> properties = new ArrayList<String>();
+	private ArrayList<String> properties = new ArrayList<String>() ;
 	private Integer roll;
 	private String name;
 

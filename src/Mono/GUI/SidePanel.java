@@ -20,6 +20,7 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -43,7 +44,7 @@ public class SidePanel extends JPanel implements ActionListener {
 	private JPanel property = new JPanel();
 	private JFrame manage = new JFrame("Property Manager");
 	private JPanel drop = new JPanel();
-	
+	private JComboBox<String> box = new JComboBox<String>();
 
 	
 	public SidePanel() {
@@ -60,7 +61,7 @@ public class SidePanel extends JPanel implements ActionListener {
 		JPanel decisionBox = new JPanel();
 
 
-		EAST_Panel.add(createTimerPane(50), BorderLayout.NORTH);
+		EAST_Panel.add(createTimerPane(10), BorderLayout.NORTH);
 		EAST_Panel.add(createRollPane(), BorderLayout.SOUTH);
 		EAST_Panel.add(createPropertyPane(), BorderLayout.CENTER);
 		
@@ -119,16 +120,10 @@ public class SidePanel extends JPanel implements ActionListener {
 		}
 		
 		if(e.getSource()==propertyButton) 
-		{		        	String[] string = {"a", "b" , "c"};
-        	JComboBox<String> box = new JComboBox<String>(string);
-        	box.setVisible(true);
-        	drop.add(box);
-        	manage.add(drop);
-        	//manage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-           // JButton btn = new JButton("OK");
-            //manage.add(btn);
-        	manage.setSize(500,500);
-        	manage.setVisible(true);
+		{		        	
+
+           Game.manageProperty();
+
 		}
 	}
 

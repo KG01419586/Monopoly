@@ -1,6 +1,8 @@
 package Mono;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.*;
@@ -10,6 +12,7 @@ import Mono.GUI.SidePanel;
 public class Board extends JPanel 
 {  
 	 private JFrame frame = new JFrame("Monopoly");
+	 private JFrame noProperty = new JFrame("Property");
 	 private JPanel map = new JPanel();
 	 private JTextField prompts=new JTextField();
 	 private ImageIcon mono = new ImageIcon(new ImageIcon("../T3/images/monopoly_board.jpg").getImage().getScaledInstance(1020, 1020, Image.SCALE_SMOOTH));
@@ -23,6 +26,7 @@ public class Board extends JPanel
 	 private JButton[][] gridSpots = new JButton[48][48];  
 	 private SidePanel sidepanel = new SidePanel();
 	 private int numHouse[] = new int[22] ;
+	 private ButtonGroup bGroup= new ButtonGroup();
 	 
 	public Board() 
 	{
@@ -978,8 +982,22 @@ public class Board extends JPanel
 
 	}
 	
- 	public void displayBuyHouse(int[] properties) 
+ 	public void displayBuyHouse(ArrayList<String> properties) 
 	{
+		if(properties.size()==0) {JOptionPane.showMessageDialog(noProperty, "You do not have any properties");return;}
+		Object[] array= properties.toArray();
+		Object[] numbers =  {1,2,3,4,"hotel"};
+		int p=JOptionPane.showOptionDialog(null, "Which Property do you want to add houses/hotels to?",
+				"Property Manager", 
+				JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, array, array[0]);
+		Arrays.fill(array,null);
+		String selected = properties.get(p);
+		int num=JOptionPane.showOptionDialog(null, "How many houses/hotels do you want to add",
+				"Property Manager", 
+				JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, numbers, numbers[0]) +1;
+
+		updateHouses(selected,num);
+
 		
 	}
 	
