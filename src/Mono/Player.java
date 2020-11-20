@@ -7,7 +7,7 @@ public class Player {
 	private String token;
 	private Integer money =2000;
 	private Integer[] position;
-	private Integer tile;
+	private Integer tile =1;
 	private Integer doubles;
 	private Integer jailRolls;
 	private Boolean inJail;

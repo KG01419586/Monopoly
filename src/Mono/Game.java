@@ -3,6 +3,8 @@ package Mono;
 import java.util.ArrayList;
 import java.util.Timer;
 
+import javax.swing.JOptionPane;
+
 import Mono.GUI.Startup;
 
 public class Game {
@@ -66,6 +68,13 @@ public class Game {
 		case 1:
 			roll=Dice.roll();
 			player1.setPosition(board.updatePlayerPosition(roll, player1.getPosition()));
+			if((roll +player1.getTile())>40) 
+			{
+				JOptionPane.showMessageDialog(null, "Passed Go, Collect $200!!!");
+				player1.setMoney(player1.getMoney()+200);
+			}
+			player1.setTile((player1.getTile()+roll)%40);
+			
 			if(Dice.isDouble()) 
 			{
 				board.updateTextField(player1.getName()+" Rolled a " + roll+ ",    Doubles!!!");
@@ -81,6 +90,12 @@ public class Game {
 		case 2:
 			roll=Dice.roll();
 			player2.setPosition(board.updatePlayerPosition(roll, player2.getPosition()));
+			if((roll +player2.getTile())>40) 
+			{
+				JOptionPane.showMessageDialog(null, "Passed Go, Collect $200!!!");
+				player2.setMoney(player2.getMoney()+200);
+			}
+			player2.setTile((player2.getTile()+roll)%40);
 			if(Dice.isDouble()) 
 			{
 				board.updateTextField(player2.getName()+ " Rolled a " + roll+ ",    Doubles!!!");
@@ -97,6 +112,7 @@ public class Game {
 			{
 				roll=Dice.roll();
 				player1.setPosition(board.updatePlayerPosition(roll, player1.getPosition()));
+
 				if(Dice.isDouble()) 
 				{
 					board.updateTextField(player1.getName()+" Rolled a " + roll+ ",    Doubles!!!");
@@ -112,6 +128,12 @@ public class Game {
 				}
 			roll=Dice.roll();
 			player3.setPosition(board.updatePlayerPosition(roll, player3.getPosition()));
+			if((roll +player3.getTile())>40) 
+			{
+				JOptionPane.showMessageDialog(null, "Passed Go, Collect $200!!!");
+				player3.setMoney(player3.getMoney()+200);
+			}
+			player3.setTile((player3.getTile()+roll)%40);
 			if(Dice.isDouble()) 
 			{
 				board.updateTextField(player3.getName()+ " Rolled a " + roll+ ",    Doubles!!!");
@@ -143,6 +165,12 @@ public class Game {
 				}
 			roll=Dice.roll();
 			player4.setPosition(board.updatePlayerPosition(roll, player4.getPosition()));
+			if((roll +player4.getTile())>40) 
+			{
+				JOptionPane.showMessageDialog(null, "Passed Go, Collect $200!!!");
+				player4.setMoney(player4.getMoney()+200);
+			}
+			player4.setTile((player4.getTile()+roll)%40);
 			if(Dice.isDouble()) 
 			{
 				board.updateTextField(player4.getName()+ " Rolled a " + roll+ ",    Doubles!!!");
@@ -226,8 +254,6 @@ public class Game {
 		switch(turn)
 		{
 		case 1:
-			player1.setProperties("baltic");
-			player1.setProperties("board");
 			board.displayBuyHouse(player1.getProperties());
 			break;
 		case 2:
