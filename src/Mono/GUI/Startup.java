@@ -1,71 +1,62 @@
 package Mono.GUI;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.FontFormatException;
 import java.awt.Graphics2D;
-import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.Label;
-import java.awt.LayoutManager;
-import java.awt.Point;
 import java.awt.RenderingHints;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JLayer;
 import javax.swing.JLayeredPane;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.EtchedBorder;
-
-import Mono.Game;
 
 public class Startup extends JFrame implements ActionListener, MouseListener {
 
 	Contenders[] contenders;
 
+	Boolean flag = false;
 	Integer numOfPlayers;
 	Integer p = 0;
 	Integer w = 3;
 	Integer h = 3;
 	JLabel RS = new JLabel("Error indicator");
+
 	// addPlayersPane components
-	TextField p1Field = new TextField("PLAYER 1");
-	TextField p2Field = new TextField("PLAYER 2");
-	TextField p3Field = new TextField("PLAYER 3");
-	TextField p4Field = new TextField("PLAYER 4");
+	JTextField p1Field = new JTextField("PLAYER 1");
+	JTextField p2Field = new JTextField("PLAYER 2");
+	JTextField p3Field = new JTextField("PLAYER 3");
+	JTextField p4Field = new JTextField("PLAYER 4");
 	JLabel p1Label = new JLabel();
 	JLabel p2Label = new JLabel();
 	JLabel p3Label = new JLabel();
 	JLabel p4Label = new JLabel();
+	JLabel p1BackLabel = new JLabel();
+	JLabel p2BackLabel = new JLabel();
+	JLabel p3BackLabel = new JLabel();
+	JLabel p4BackLabel = new JLabel();
 	ImageIcon p1ImageIcon = new ImageIcon();
 	ImageIcon p2ImageIcon = new ImageIcon();
 	ImageIcon p3ImageIcon = new ImageIcon();
 	ImageIcon p4ImageIcon = new ImageIcon();
 	JButton clearButton = new JButton("Clear");
 	JButton nextButton = new JButton("Next");
-	JButton backButton = new JButton("Back");
-	JButton addButton = new JButton("Add");
+	JButton addButton = new JButton();
+	JButton finishButton = new JButton("Finish");
 
 	// iconBoxPane components
 	JPanel iconPane;
@@ -81,28 +72,53 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 	ImageIcon ii2 = new ImageIcon();
 	ImageIcon ii3 = new ImageIcon();
 	ImageIcon ii4 = new ImageIcon();
-	/*ImageIcon ii5 = new ImageIcon();
+	ImageIcon ii5 = new ImageIcon();
 	ImageIcon ii6 = new ImageIcon();
 	ImageIcon ii7 = new ImageIcon();
-	ImageIcon ii8 = new ImageIcon();*/
+	ImageIcon ii8 = new ImageIcon();
+	JComboBox<?> selectTimeLimit;
+	JPanel timerPane = new JPanel();
+	TimerBox timeBox;
 
 	public Startup(Integer Width, Integer Height) {
 
 		// startup frame
 		new JFrame("Monopoly");
 		this.setLayout(null);
-		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setSize(Width, Height);
 		this.setLocationRelativeTo(null);
 
+		this.add(playersInfoPane());
 		this.add(iconBoxPane());
 		this.add(addPlayerPane());
+		this.add(startBoxPane());
 		this.setVisible(true);
 
 	}
 
-	private JPanel addPlayerPane() {
+	private Component playersInfoPane() {
+		JLayeredPane playersInfoPane = new JLayeredPane();
+		playersInfoPane.setLayout(null);
+		playersInfoPane.setBorder(BorderFactory.createEtchedBorder());
+		playersInfoPane.setBackground(new Color(0X1a1a1a));
+		playersInfoPane.setOpaque(true);
+		playersInfoPane.setBounds(0, 0, 300, 300);
+		playersInfoPane.hide();
+
+		return playersInfoPane;
+	}
+
+	private Component startBoxPane() {
+		JPanel startBoxPane = new JPanel();
+		startBoxPane.setBorder(BorderFactory.createEtchedBorder(new Color(0X262626), new Color(0X0d0d0d)));
+		startBoxPane.setBackground(new Color(0X1a1a1a));
+		startBoxPane.setBounds(0, 300, 600, 61);
+		return startBoxPane;
+	}
+
+	private JLayeredPane addPlayerPane() {
 
 		numOfPlayers = 2;
 		contenders = new Contenders[4];
@@ -111,9 +127,11 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		contenders[2] = null;
 		contenders[3] = null;
 
-		JPanel addPlayersPane = new JPanel();
+		JLayeredPane addPlayersPane = new JLayeredPane();
+		addPlayersPane.setLayout(null);
 		addPlayersPane.setBorder(BorderFactory.createEtchedBorder());
 		addPlayersPane.setBackground(new Color(0X1a1a1a));
+		addPlayersPane.setOpaque(true);
 		addPlayersPane.setBounds(0, 0, 300, 300);
 
 		p1Label.setSize(w * 15, h * 15);
@@ -160,6 +178,26 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		p3Label.addMouseListener(this);
 		p4Label.addMouseListener(this);
 
+		p1BackLabel.setBackground(new Color(0X130606));
+		p1BackLabel.setBounds(p1Label.getLocation().x - 1, p1Label.getLocation().y - 1, p1Label.getWidth() + 1,
+				p1Label.getHeight() + 1);
+		p1BackLabel.setOpaque(true);
+
+		p2BackLabel.setBackground(new Color(0X001a00));
+		p2BackLabel.setBounds(p2Label.getLocation().x - 1, p2Label.getLocation().y - 1, p2Label.getWidth() + 1,
+				p2Label.getHeight() + 1);
+		p2BackLabel.setOpaque(true);
+
+		p3BackLabel.setBackground(new Color(0X000d1a));
+		p3BackLabel.setBounds(p3Label.getLocation().x - 1, p3Label.getLocation().y - 1, p3Label.getWidth() + 1,
+				p3Label.getHeight() + 1);
+		p3BackLabel.setOpaque(true);
+
+		p4BackLabel.setBackground(new Color(0X1a001a));
+		p4BackLabel.setBounds(p4Label.getLocation().x - 1, p4Label.getLocation().y - 1, p4Label.getWidth() + 1,
+				p4Label.getHeight() + 1);
+		p4BackLabel.setOpaque(true);
+
 		p1Field.setSize(w * 70, h * 8);
 		p2Field.setSize(w * 70, h * 8);
 		p3Field.setSize(w * 70, h * 8);
@@ -169,10 +207,15 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		p3Field.setLocation(w * 5, h * 42);
 		p4Field.setLocation(w * 5, h * 59);
 
-		p1Field.setBackground(new Color(0X1a1a1a));
-		p2Field.setBackground(new Color(0X1a1a1a));
-		p3Field.setBackground(new Color(0X1a1a1a));
-		p4Field.setBackground(new Color(0X1a1a1a));
+		p1Field.setBackground(new Color(0X130606));
+		p2Field.setBackground(new Color(0X01a00));
+		p3Field.setBackground(new Color(0X000d1a));
+		p4Field.setBackground(new Color(0X1a001a));
+
+		p1Field.setBorder(BorderFactory.createEtchedBorder(new Color(0X260d0d), new Color(0X000000)));
+		p2Field.setBorder(BorderFactory.createEtchedBorder(new Color(0X003300), new Color(0X000000)));
+		p3Field.setBorder(BorderFactory.createEtchedBorder(new Color(0X001a33), new Color(0X000000)));
+		p4Field.setBorder(BorderFactory.createEtchedBorder(new Color(0X330033), new Color(0X000000)));
 
 		p1Field.setForeground(Color.WHITE);
 		p2Field.setForeground(Color.WHITE);
@@ -188,7 +231,8 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		p4Field.hide();
 		p3Label.hide();
 		p4Label.hide();
-		
+		p3BackLabel.hide();
+		p4BackLabel.hide();
 
 		// RS: Red Start: indication for empty or duplicate fields and icons.
 		RS.setSize(10, 10);
@@ -197,52 +241,56 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		RS.setBackground(new Color(0X1a1a1a));
 		RS.setForeground(Color.red);
 		RS.setOpaque(true);
-		this.add(RS);
 		RS.hide();
+		addPlayersPane.add(RS);
 
-
-		addButton.setSize(w * 25, h * 10);
-		nextButton.setSize(w * 25, h * 10);
-		backButton.setSize(w * 25, h * 10);
-		clearButton.setSize(w * 25, h * 10);
-
-		addButton.setLocation(w * 50, h * 35);
-		nextButton.setLocation(w * 65, h * 84);
-		backButton.setLocation(w * 35, h * 84);
-		clearButton.setLocation(w * 5, h * 84);
-
+		addButton.setSize(w * 15, h * 15);
+		addButton.setLocation(w * 60, h * 35);
+		addButton.setBackground(new Color(0X1a1a1a));
+		addButton.setIcon(new ImageIcon("src/Mono/GUI/Img/add.png"));
+		addButton.setHorizontalTextPosition(JButton.CENTER);
+		addButton.setForeground(Color.lightGray);
 		addButton.addActionListener(this);
-		nextButton.addActionListener(this);
-		backButton.addActionListener(this);
+
+		clearButton.setSize(w * 25, h * 10);
+		clearButton.setLocation(w * 5, h * 84);
+		clearButton.setBackground(new Color(0X1a1a1a));
+		clearButton.setForeground(Color.lightGray);
 		clearButton.addActionListener(this);
 
-		addButton.setBackground(new Color(0X1a1a1a));
+		nextButton.setSize(w * 25, h * 10);
+		nextButton.setLocation(w * 65, h * 84);
 		nextButton.setBackground(new Color(0X1a1a1a));
-		backButton.setBackground(new Color(0X1a1a1a));
-		clearButton.setBackground(new Color(0X1a1a1a));
+		nextButton.setForeground(Color.lightGray);
+		nextButton.addActionListener(this);
 
-		addButton.setBackground(Color.WHITE);
-		nextButton.setForeground(Color.white);
-		backButton.setForeground(Color.white);
-		clearButton.setForeground(Color.white);
+		finishButton.setSize(w * 25, h * 10);
+		finishButton.setLocation(w * 65, h * 84);
+		finishButton.setBackground(new Color(0X1a1a1a));
+		finishButton.setForeground(Color.lightGray);
+		finishButton.addActionListener(this);
+		finishButton.setEnabled(false);
+		finishButton.hide();
 
-		backButton.setEnabled(false);
+		addPlayersPane.add(p1Label);
+		addPlayersPane.add(p2Label);
+		addPlayersPane.add(p3Label);
+		addPlayersPane.add(p4Label);
 
-		this.add(p1Label);
-		this.add(p2Label);
-		this.add(p3Label);
-		this.add(p4Label);
+		addPlayersPane.add(p1BackLabel);
+		addPlayersPane.add(p2BackLabel);
+		addPlayersPane.add(p3BackLabel);
+		addPlayersPane.add(p4BackLabel);
 
-		this.add(p1Field);
-		this.add(p2Field);
-		this.add(p3Field);
-		this.add(p4Field);
+		addPlayersPane.add(p1Field);
+		addPlayersPane.add(p2Field);
+		addPlayersPane.add(p3Field);
+		addPlayersPane.add(p4Field);
 
-		this.add(addButton);
-		this.add(clearButton);
-		this.add(backButton);
-		this.add(nextButton);
-
+		addPlayersPane.add(addButton);
+		addPlayersPane.add(clearButton);
+		addPlayersPane.add(nextButton);
+		addPlayersPane.add(finishButton);
 		return addPlayersPane;
 	}
 
@@ -272,101 +320,155 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		i2.setSize(w * 20, h * 20);
 		i3.setSize(w * 20, h * 20);
 		i4.setSize(w * 20, h * 20);
-		/*i5.setSize(w * 20, h * 20);
+		i5.setSize(w * 20, h * 20);
 		i6.setSize(w * 20, h * 20);
 		i7.setSize(w * 20, h * 20);
-		i8.setSize(w * 20, h * 20);*/
+		i8.setSize(w * 20, h * 20);
 
 		i1.setBorder(BorderFactory.createRaisedBevelBorder());
 		i2.setBorder(BorderFactory.createRaisedBevelBorder());
 		i3.setBorder(BorderFactory.createRaisedBevelBorder());
 		i4.setBorder(BorderFactory.createRaisedBevelBorder());
-		/*i5.setBorder(BorderFactory.createRaisedBevelBorder());
+		i5.setBorder(BorderFactory.createRaisedBevelBorder());
 		i6.setBorder(BorderFactory.createRaisedBevelBorder());
 		i7.setBorder(BorderFactory.createRaisedBevelBorder());
-		i8.setBorder(BorderFactory.createRaisedBevelBorder());*/
+		i8.setBorder(BorderFactory.createRaisedBevelBorder());
 
 		i1.setOpaque(true);
 		i2.setOpaque(true);
 		i3.setOpaque(true);
 		i4.setOpaque(true);
-		/*i5.setOpaque(true);
+		i5.setOpaque(true);
 		i6.setOpaque(true);
 		i7.setOpaque(true);
-		i8.setOpaque(true);*/
+		i8.setOpaque(true);
 
 		i1.setBackground(iconBoxPane.getBackground());
 		i2.setBackground(iconBoxPane.getBackground());
 		i3.setBackground(iconBoxPane.getBackground());
 		i4.setBackground(iconBoxPane.getBackground());
-		/*i5.setBackground(iconBoxPane.getBackground());
+		i5.setBackground(iconBoxPane.getBackground());
 		i6.setBackground(iconBoxPane.getBackground());
 		i7.setBackground(iconBoxPane.getBackground());
-		i8.setBackground(iconBoxPane.getBackground());*/
+		i8.setBackground(iconBoxPane.getBackground());
 
-		ii1 = loadImage("dog.jpg", i1.getWidth() - 10, i1.getHeight() - 10);
-		ii2 = loadImage("boot.png", i1.getWidth() - 10, i1.getHeight() - 10);
-		ii3 = loadImage("iron.jpg", i1.getWidth() - 10, i1.getHeight() - 10);
-		ii4 = loadImage("ship.jpg", i1.getWidth() - 10, i1.getHeight() - 10);
-		/*ii1 = loadImage("1.png", i1.getWidth() - 10, i1.getHeight() - 10);
+		ii1 = loadImage("1.png", i1.getWidth() - 10, i1.getHeight() - 10);
 		ii2 = loadImage("2.png", i1.getWidth() - 10, i1.getHeight() - 10);
 		ii3 = loadImage("3.png", i1.getWidth() - 10, i1.getHeight() - 10);
 		ii4 = loadImage("4.png", i1.getWidth() - 10, i1.getHeight() - 10);
 		ii5 = loadImage("5.png", i1.getWidth() - 10, i1.getHeight() - 10);
 		ii6 = loadImage("6.png", i1.getWidth() - 10, i1.getHeight() - 10);
 		ii7 = loadImage("7.png", i1.getWidth() - 10, i1.getHeight() - 10);
-		ii8 = loadImage("8.png", i1.getWidth() - 10, i1.getHeight() - 10);*/
+		ii8 = loadImage("8.png", i1.getWidth() - 10, i1.getHeight() - 10);
 
 		i1.setIcon(ii1);
 		i2.setIcon(ii2);
 		i3.setIcon(ii3);
 		i4.setIcon(ii4);
-		/*i5.setIcon(ii5);
+		i5.setIcon(ii5);
 		i6.setIcon(ii6);
 		i7.setIcon(ii7);
-		i8.setIcon(ii8);*/
+		i8.setIcon(ii8);
 
 		i1.setHorizontalAlignment(JLabel.CENTER);
 		i2.setHorizontalAlignment(JLabel.CENTER);
 		i3.setHorizontalAlignment(JLabel.CENTER);
 		i4.setHorizontalAlignment(JLabel.CENTER);
-		/*i5.setHorizontalAlignment(JLabel.CENTER);
+		i5.setHorizontalAlignment(JLabel.CENTER);
 		i6.setHorizontalAlignment(JLabel.CENTER);
 		i7.setHorizontalAlignment(JLabel.CENTER);
-		i8.setHorizontalAlignment(JLabel.CENTER);*/
+		i8.setHorizontalAlignment(JLabel.CENTER);
 
 		i1.addMouseListener(this);
 		i2.addMouseListener(this);
 		i3.addMouseListener(this);
 		i4.addMouseListener(this);
-		/*i5.addMouseListener(this);
+		i5.addMouseListener(this);
 		i6.addMouseListener(this);
 		i7.addMouseListener(this);
-		i8.addMouseListener(this);*/
+		i8.addMouseListener(this);
 
 		iconPane.add(i1);
 		iconPane.add(i2);
 		iconPane.add(i3);
 		iconPane.add(i4);
-		/*iconPane.add(i5);
+		iconPane.add(i5);
 		iconPane.add(i6);
 		iconPane.add(i7);
-		iconPane.add(i8);*/
+		iconPane.add(i8);
+		/*
+		 * 
+		 * clock & combo box
+		 */
+		selectTimeLimit = new JComboBox<String>(new String[] { "SELECT TIME LIMIT", "5 Minutes", "10 Minutes",
+				"15 Minutes", "20 Minutes", "30 Minutes", "40 Minutes", "50 Minutes", "60 Minutes" });
+		selectTimeLimit.setSize(150, 20);
+		selectTimeLimit.setLocation(75, h * 40);
+		selectTimeLimit.addActionListener(this);
+
+		timeBox = new TimerBox(0);
+		timeBox.nonInteractive();
+		timeBox.setTimerBackgroundColor(new Color(0X0d0d0d));
+
+		timerPane.setLayout(new BorderLayout());
+		timerPane.setSize(200, 73);
+		timerPane.setLocation(15 * w, 10 * h);
+		timerPane.add(timeBox, BorderLayout.NORTH);
 
 		iconPane.hide();
+		selectTimeLimit.hide();
+		timerPane.hide();
+
+		iconBoxPane.add(timerPane);
+		iconBoxPane.add(selectTimeLimit);
 		iconBoxPane.add(iconPane);
 		return iconBoxPane;
 	}
 
+	/*
+	 * 
+	 * Action Performed
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		if (e.getSource() == addButton) {
+		if (e.getSource() == selectTimeLimit) {
+			if (selectTimeLimit.getSelectedIndex() == 1) {
+				timeBox.setTimer(5);
+				finishButton.setEnabled(true);
+			} else if (selectTimeLimit.getSelectedIndex() == 2) {
+				timeBox.setTimer(10);
+				finishButton.setEnabled(true);
+			} else if (selectTimeLimit.getSelectedIndex() == 3) {
+				timeBox.setTimer(15);
+				finishButton.setEnabled(true);
+			} else if (selectTimeLimit.getSelectedIndex() == 4) {
+				timeBox.setTimer(20);
+				finishButton.setEnabled(true);
+			} else if (selectTimeLimit.getSelectedIndex() == 5) {
+				timeBox.setTimer(30);
+				finishButton.setEnabled(true);
+			} else if (selectTimeLimit.getSelectedIndex() == 6) {
+				timeBox.setTimer(40);
+				finishButton.setEnabled(true);
+			} else if (selectTimeLimit.getSelectedIndex() == 7) {
+				timeBox.setTimer(50);
+				finishButton.setEnabled(true);
+			} else if (selectTimeLimit.getSelectedIndex() == 8) {
+				timeBox.setTimer(60);
+				finishButton.setEnabled(true);
+			}
+		}
+
+		if (e.getSource() == addButton)
+
+		{
 			if (e.getSource() == addButton) {
 				if (numOfPlayers == 3) {
 					addButton.hide();
 					p4Field.show();
 					p4Label.show();
+					p4BackLabel.show();
 					numOfPlayers++;
 
 				}
@@ -374,6 +476,7 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 					addButton.setLocation(addButton.getLocation().x, addButton.getLocation().y + 60);
 					p3Field.show();
 					p3Label.show();
+					p3BackLabel.show();
 					numOfPlayers++;
 
 				}
@@ -383,11 +486,23 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 
 		if (e.getSource() == clearButton) {
 			numOfPlayers = 2;
+			contenders = new Contenders[4];
+			contenders[0] = null;
+			contenders[1] = null;
+			contenders[2] = null;
+			contenders[3] = null;
 			p = 3;
 
 			int counter = 4;
-			addButton.setLocation(w * 50, h * 35);
+			addButton.setLocation(w * 60, h * 35);
 			addButton.show();
+			nextButton.show();
+			p1Field.show();
+			p2Field.show();
+			p1Label.show();
+			p2Label.show();
+			p1BackLabel.show();
+			p2BackLabel.show();
 
 			p1Field.setText("PLAYER 1");
 			p2Field.setText("PLAYER 2");
@@ -414,20 +529,29 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			p3Label.setHorizontalAlignment(JLabel.CENTER);
 			p4Label.setHorizontalAlignment(JLabel.CENTER);
 
+			selectTimeLimit.setSelectedIndex(0);
+			timeBox.setTimer(0);
+			finishButton.setEnabled(false);
+
 			p3Field.hide();
 			p4Field.hide();
 			p3Label.hide();
 			p4Label.hide();
 
+			p3BackLabel.hide();
+			p4BackLabel.hide();
+
 			iconPane.hide();
+
+			finishButton.hide();
+			timerPane.hide();
+			selectTimeLimit.hide();
 
 		}
 
 		if (e.getSource() == nextButton) {
 			iconPane.hide();
-			//iconPane.setVisible(false);
 			RS.hide();
-			//RS.setVisible(false);
 
 			/*
 			 * look for empty slots
@@ -462,32 +586,35 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 				p2Field.selectAll();
 				RS.setLocation(5, 69);
 				RS.show();
-
+				return;
 			} else if (contenders[0].pIcon.equals(contenders[1].pIcon)) {
 				p2Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
 				p = 2;
 				iconPane.show();
 				RS.setLocation(5, 69);
 				RS.show();
-			} 
+				return;
+			}
 			// compare p1 & p3
 			if (p3Field.isShowing() && p1Field.getText().equals(p3Field.getText())) {
 				p3Field.selectAll();
 				RS.setLocation(5, 126);
 				RS.show();
-
+				return;
 			} else if (p3Field.isShowing() && contenders[0].pIcon.equals(contenders[2].pIcon)) {
 				p3Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
 				p = 3;
 				iconPane.show();
 				RS.setLocation(5, 126);
 				RS.show();
-			} 
+				return;
+			}
 			// compare p1 & p4
 			if (p4Field.isShowing() && p1Field.getText().equals(p4Field.getText())) {
 				p4Field.selectAll();
 				RS.setLocation(5, 177);
 				RS.show();
+				return;
 
 			} else if (p4Field.isShowing() && contenders[0].pIcon.equals(contenders[3].pIcon)) {
 				p4Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
@@ -495,59 +622,79 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 				iconPane.show();
 				RS.setLocation(5, 177);
 				RS.show();
+				return;
 			}
 			// compare p2 & p3
 			if (p3Field.isShowing() && p2Field.getText().equals(p3Field.getText())) {
 				p3Field.selectAll();
 				RS.setLocation(5, 126);
 				RS.show();
-
+				return;
 			} else if (p3Field.isShowing() && contenders[1].pIcon.equals(contenders[2].pIcon)) {
 				p3Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
 				p = 3;
 				iconPane.show();
 				RS.setLocation(5, 126);
 				RS.show();
+				return;
 			}
 			// compare p2 & p4
 			if (p4Field.isShowing() && p2Field.getText().equals(p4Field.getText())) {
 				p4Field.selectAll();
 				RS.setLocation(5, 177);
 				RS.show();
-
+				return;
 			} else if (p4Field.isShowing() && contenders[1].pIcon.equals(contenders[3].pIcon)) {
 				p4Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
 				p = 4;
 				iconPane.show();
 				RS.setLocation(5, 177);
 				RS.show();
+				return;
 			}
 			// compare p3 & p4
 			if (p4Field.isShowing() && p3Field.getText().equals(p4Field.getText())) {
 				p4Field.selectAll();
 				RS.setLocation(5, 177);
 				RS.show();
-
+				return;
 			} else if (p4Field.isShowing() && contenders[2].pIcon.equals(contenders[3].pIcon)) {
 				p4Label.setIcon(loadImage("default-icon.png", p1Label.getWidth() - 10, p1Label.getHeight() - 10));
 				p = 4;
 				iconPane.show();
 				RS.setLocation(5, 177);
 				RS.show();
+				return;
 			}
-			Game.setPlayers(contenders[0].pIcon, p1Field.getText());
-			Game.setPlayers(contenders[1].pIcon, p2Field.getText());
-			if (p3Field.isShowing()) {Game.setPlayers(contenders[2].pIcon, p3Field.getText());}
-			if (p4Field.isShowing()) {Game.setPlayers(contenders[3].pIcon, p4Field.getText());}
-			backButton.enable();
-			this.setVisible(false);
-			Game.showBoard();
-			
+			finishButton.show();
+			selectTimeLimit.show();
+			timeBox.show();
+			timerPane.show();
 
+			addButton.hide();
+			nextButton.hide();
+
+		}
+
+		if (e.getSource() == finishButton) {
+			contenders[0].pName = p1Field.getText();
+			contenders[1].pName = p2Field.getText();
+			if(numOfPlayers == 3) contenders[2].pName = p3Field.getText();
+			if(numOfPlayers == 4) {
+				contenders[2].pName = p3Field.getText();
+				contenders[3].pName = p4Field.getText();
+			}
+			flag = true;
+			//this.setVisible(false);
+			System.out.println(getTimeLimit());
 		}
 
 	}
 
+	/*
+	 * 
+	 * Mouse Events
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// text fields
@@ -580,30 +727,26 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 
 		// right icons
 		if (e.getSource() == i1) {
-			//copyImg("1.png", 45, 45);
-			copyImg("dog.jpg",45,45);
+			copyImg("1.png", 45, 45);
 			p = 0;
 			iconPane.hide();
 		}
 		if (e.getSource() == i2) {
-			//copyImg("2.png", 45, 45);
-			copyImg("boot.png",45,45);
+			copyImg("2.png", 45, 45);
 			p = 0;
 			iconPane.hide();
 		}
 		if (e.getSource() == i3) {
-			//copyImg("3.png", 45, 45);
-			copyImg("iron.jpg",45,45);
+			copyImg("3.png", 45, 45);
 			p = 0;
 			iconPane.hide();
 		}
 		if (e.getSource() == i4) {
-			//copyImg("4.png", 45, 45);
-			copyImg("ship.jpg",45,45);
+			copyImg("4.png", 45, 45);
 			p = 0;
 			iconPane.hide();
 		}
-		/*if (e.getSource() == i5) {
+		if (e.getSource() == i5) {
 			copyImg("5.png", 45, 45);
 			p = 0;
 			iconPane.hide();
@@ -622,7 +765,7 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			copyImg("8.png", 45, 45);
 			p = 0;
 			iconPane.hide();
-		}*/
+		}
 
 	}
 
@@ -645,14 +788,14 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			i3.setBorder(BorderFactory.createLoweredBevelBorder());
 		if (e.getSource() == i4)
 			i4.setBorder(BorderFactory.createLoweredBevelBorder());
-		/*if (e.getSource() == i5)
+		if (e.getSource() == i5)
 			i5.setBorder(BorderFactory.createLoweredBevelBorder());
 		if (e.getSource() == i6)
 			i6.setBorder(BorderFactory.createLoweredBevelBorder());
 		if (e.getSource() == i7)
 			i7.setBorder(BorderFactory.createLoweredBevelBorder());
 		if (e.getSource() == i8)
-			i8.setBorder(BorderFactory.createLoweredBevelBorder());*/
+			i8.setBorder(BorderFactory.createLoweredBevelBorder());
 
 	}
 
@@ -675,14 +818,14 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			i3.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		if (e.getSource() == i4)
 			i4.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-		/*if (e.getSource() == i5)
+		if (e.getSource() == i5)
 			i5.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		if (e.getSource() == i6)
 			i6.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		if (e.getSource() == i7)
 			i7.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		if (e.getSource() == i8)
-			i8.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));*/
+			i8.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 
 	}
 
@@ -706,14 +849,14 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			i3.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		if (e.getSource() == i4)
 			i4.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-		/*if (e.getSource() == i5)
+		if (e.getSource() == i5)
 			i5.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		if (e.getSource() == i6)
 			i6.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		if (e.getSource() == i7)
 			i7.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		if (e.getSource() == i8)
-			i8.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));*/
+			i8.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 
 	}
 
@@ -736,14 +879,14 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			i3.setBorder(BorderFactory.createRaisedBevelBorder());
 		if (e.getSource() == i4)
 			i4.setBorder(BorderFactory.createRaisedBevelBorder());
-		/*if (e.getSource() == i5)
+		if (e.getSource() == i5)
 			i5.setBorder(BorderFactory.createRaisedBevelBorder());
 		if (e.getSource() == i6)
 			i6.setBorder(BorderFactory.createRaisedBevelBorder());
 		if (e.getSource() == i7)
 			i7.setBorder(BorderFactory.createRaisedBevelBorder());
 		if (e.getSource() == i8)
-			i8.setBorder(BorderFactory.createRaisedBevelBorder());*/
+			i8.setBorder(BorderFactory.createRaisedBevelBorder());
 
 	}
 
@@ -785,7 +928,18 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		}
 
 	}
-
+	public Contenders[] getPlayers() {
+		return this.contenders;
+	}
+	
+	public Integer getTimeLimit() {
+		return Integer.parseInt(((String) (selectTimeLimit.getSelectedItem())).substring(0, 2).trim());
+	}
+	
+	public Boolean flag() {
+		return this.flag;
+	}
+	
 	private class Contenders {
 		String pName;
 		String pIcon;

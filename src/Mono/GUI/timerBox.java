@@ -23,6 +23,7 @@ class TimerBox extends JPanel implements MouseListener {
 	private JLabel timerLabel;
 	private boolean hasStarted;
 	private boolean isRunning;
+	private boolean isIntractive;
 
 	TimerBox(Integer tl) {
 		this.setLayout(new FlowLayout());
@@ -34,10 +35,10 @@ class TimerBox extends JPanel implements MouseListener {
 		try {
 			timerFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/Mono/GUI/Font/DS-DIGIT.TTF"));
 		} catch (FontFormatException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR: Font format not supported");
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR: File src/Mono/GUI/Font/DS-DIGIT.TTF");
 			e.printStackTrace();
 		}
 		timerFont = timerFont.deriveFont(Font.BOLD, 52);
@@ -52,6 +53,7 @@ class TimerBox extends JPanel implements MouseListener {
 		setTimer(tl);
 		isRunning = false;
 		hasStarted = false;
+		isIntractive = true;
 		timerThread = new Thread() {
 			public void run() {
 				hasStarted = true;
@@ -63,7 +65,7 @@ class TimerBox extends JPanel implements MouseListener {
 					try {
 						timerThread.sleep(1000);
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
+						System.out.println("ERROR: timer box thread");
 						e.printStackTrace();
 					}
 				}
@@ -82,6 +84,7 @@ class TimerBox extends JPanel implements MouseListener {
 	public void setTimer(int min) {
 		// work with seconds
 		timeLimit = min * 60;
+		this.refreshTimer();
 
 	}
 
@@ -106,8 +109,39 @@ class TimerBox extends JPanel implements MouseListener {
 		timerThread.resume();
 	}
 
-	private void refreshTimer() {
-		timerLabel.setText(getTime()[0] + ":" + getTime()[1]);
+	void setTimerBackgroundColor(Color color) {
+		this.setBackground(color);
+	}
+
+	Color getTimerBackgroundColor() {
+		return this.getBackground();
+	}
+
+	boolean isInteractive() {
+		return this.isInteractive();
+	}
+
+	void interactive() {
+		this.isIntractive = true;
+		this.timerLabel.addMouseListener(this);
+
+	}
+
+	void nonInteractive() {
+		this.isIntractive = false;
+		this.timerLabel.removeMouseListener(this);
+	}
+
+	public void refreshTimer() {
+
+		if (this.getTime()[0] < 10)
+			timerLabel.setText("0" + getTime()[0] + ":");
+		else
+			timerLabel.setText(getTime()[0] + ":");
+		if (this.getTime()[1] < 10)
+			timerLabel.setText(timerLabel.getText() + "0" + getTime()[1]);
+		else
+			timerLabel.setText(timerLabel.getText() + getTime()[1]);
 	}
 
 	@Override
@@ -137,7 +171,8 @@ class TimerBox extends JPanel implements MouseListener {
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent e) {}
+	public void mouseEntered(MouseEvent e) {
+	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
