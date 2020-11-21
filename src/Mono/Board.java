@@ -1009,7 +1009,11 @@ public class Board extends JPanel
 	public void showBoard() 
 	{
 		frame.setVisible(true);
-	}		
+	}	
+	public int getHouses(int space) 
+	{
+		return numHouse[space];
+	}
 
 }
 

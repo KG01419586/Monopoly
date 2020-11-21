@@ -25,6 +25,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Mono.Game;
+
 public class Startup extends JFrame implements ActionListener, MouseListener {
 
 	Contenders[] contenders;
@@ -685,8 +687,15 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 				contenders[3].pName = p4Field.getText();
 			}
 			flag = true;
-			//this.setVisible(false);
-			System.out.println(getTimeLimit());
+			this.setVisible(false);
+			Game.setPlayers(contenders[0].pIcon, p1Field.getText());
+			Game.setPlayers(contenders[1].pIcon, p2Field.getText());
+			if (numOfPlayers ==3) {Game.setPlayers(contenders[2].pIcon, p3Field.getText());}
+			if (numOfPlayers ==4) {
+				Game.setPlayers(contenders[2].pIcon, p3Field.getText());
+				Game.setPlayers(contenders[3].pIcon, p4Field.getText());}
+			Game.showBoard();
+			//System.out.println(getTimeLimit());
 		}
 
 	}
