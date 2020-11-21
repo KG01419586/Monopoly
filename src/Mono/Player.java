@@ -8,15 +8,16 @@ public class Player {
 	private Integer money =2000;
 	private Integer[] position;
 	private Integer tile =1;
-	private Integer doubles;
+	private Integer doubles=0;
 	private Integer jailRolls;
 	private Boolean inJail;
 	private ArrayList<String> properties = new ArrayList<String>() ;
 	private Integer roll;
 	private String name;
+	
 
 	public Player() {
-		doubles = 0;
+		
 	}
 
 	public void setToken(String t) {
@@ -56,7 +57,7 @@ public class Player {
 	}
 
 	public Integer numOfDoubles() {
-		return doubles;
+		return this.doubles;
 	}
 
 	public Integer getMoney() {
@@ -64,7 +65,7 @@ public class Player {
 	}
 
 	public void setMoney(int m) {
-		money += m;
+		this.money += m;
 	}
 
 	public void payRent(int rent, Player landLord) {
@@ -120,11 +121,11 @@ public class Player {
 	}
 	public ArrayList<String> getProperties() 
 	{
-		return properties;
+		return this.properties;
 	}
 	public int getRoll() 
 	{
-		return roll;
+		return this.roll;
 	}
 	public void setRoll(int roll) 
 	{

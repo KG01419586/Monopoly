@@ -1359,7 +1359,7 @@ public class Game {
 						}
 						o.setMoney(o.getMoney()-utilities);
 						player1.setMoney(player1.getMoney()+utilities);
-						JOptionPane.showMessageDialog(null, "Paid "+player1.getName()+" $"+utilities);
+						JOptionPane.showMessageDialog(null, "Electric Company.  Paid "+player1.getName()+" $"+utilities);
 						break;
 
 					case 2: 
@@ -1373,7 +1373,7 @@ public class Game {
 						}
 						o.setMoney(o.getMoney()-utilities);
 						player2.setMoney(player2.getMoney()+utilities);
-						JOptionPane.showMessageDialog(null, "Paid "+player2.getName()+" $"+utilities);
+						JOptionPane.showMessageDialog(null, "Electric Company.  Paid "+player2.getName()+" $"+utilities);
 						break;
 					case 3: 
 						if (tiles[28]==1) 
@@ -1386,7 +1386,7 @@ public class Game {
 						}
 						o.setMoney(o.getMoney()-utilities);
 						player3.setMoney(player3.getMoney()+utilities);
-						JOptionPane.showMessageDialog(null, "Paid "+player3.getName()+" $"+utilities);
+						JOptionPane.showMessageDialog(null, "Electric Company.  Paid "+player3.getName()+" $"+utilities);
 						break;
 					case 4: 
 						if (tiles[28]==1) 
@@ -1399,7 +1399,7 @@ public class Game {
 						}
 						o.setMoney(o.getMoney()-utilities);
 						player4.setMoney(player4.getMoney()+utilities);
-						JOptionPane.showMessageDialog(null, "Paid "+player4.getName()+" $"+utilities);
+						JOptionPane.showMessageDialog(null, "Electric Company.  Paid "+player4.getName()+" $"+utilities);
 						
 						break;
 					}
@@ -3173,7 +3173,7 @@ public class Game {
 						}
 						o.setMoney(o.getMoney()-utilities);
 						player1.setMoney(player1.getMoney()+utilities);
-						JOptionPane.showMessageDialog(null, "Paid "+player1.getName()+" $"+utilities);
+						JOptionPane.showMessageDialog(null, "Water Works.  Paid "+player1.getName()+" $"+utilities);
 						break;
 
 					case 2: 
@@ -3187,7 +3187,7 @@ public class Game {
 						}
 						o.setMoney(o.getMoney()-utilities);
 						player2.setMoney(player2.getMoney()+utilities);
-						JOptionPane.showMessageDialog(null, "Paid "+player2.getName()+" $"+utilities);
+						JOptionPane.showMessageDialog(null, "Water Works.  Paid "+player2.getName()+" $"+utilities);
 						break;
 					case 3: 
 						if (tiles[12]==1) 
@@ -3200,7 +3200,7 @@ public class Game {
 						}
 						o.setMoney(o.getMoney()-utilities);
 						player3.setMoney(player3.getMoney()+utilities);
-						JOptionPane.showMessageDialog(null, "Paid "+player3.getName()+" $"+utilities);
+						JOptionPane.showMessageDialog(null, "Water Works.  Paid "+player3.getName()+" $"+utilities);
 						break;
 					case 4: 
 						if (tiles[12]==1) 
@@ -3213,7 +3213,7 @@ public class Game {
 						}
 						o.setMoney(o.getMoney()-utilities);
 						player4.setMoney(player4.getMoney()+utilities);
-						JOptionPane.showMessageDialog(null, "Paid "+player4.getName()+" $"+utilities);
+						JOptionPane.showMessageDialog(null, "Water Works.  Paid "+player4.getName()+" $"+utilities);
 						break;
 					}
 				}
