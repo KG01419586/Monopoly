@@ -54,12 +54,14 @@ public class Game {
 	{
 		
 		Startup startup = new Startup(1000,1000);
+		showBoard();
 				
 	}
 	public static  void showBoard() 
 	{
 
 		board.showBoard();
+		
 	}
 	public static void roll() 
 	{
