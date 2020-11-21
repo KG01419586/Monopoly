@@ -3361,6 +3361,9 @@ public class Game {
 				break;
 			case 30:
 				//go to jail
+				JOptionPane.showMessageDialog(null, "Go To Jail, Go Directly To Jail, Do Not Pass GO, Do Not Collect $200.");				
+				o.setPosition(board.updatePlayerPosition(20, o.getPosition()));
+				o.setTile((10)%40);
 				break;
 			case 31:
 				//pacific
