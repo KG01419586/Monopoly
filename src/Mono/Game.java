@@ -25,6 +25,7 @@ public class Game {
 	static Player player4 = new Player();
 	static int roll;
 	private static int[] tiles = new int[40];
+
 	
 
 	
@@ -72,6 +73,50 @@ public class Game {
 		switch(turn) 
 		{
 		case 1:
+			if(player1.isInJail()) 
+			{
+				Object[] jail =  {"Roll", "Pay $50"};
+				int p=JOptionPane.showOptionDialog(null, ("You are in Jail. "+ (3-player1.getJailRolls()) +" Turns left. "+"Would you like to roll for doubles or pay $50 to get out?"),
+						"In Jail", 
+						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, jail,jail[0]);
+				Arrays.fill(jail,null);
+				if(p==0) 
+				{
+					Dice.roll();
+					if(Dice.isDouble()) 
+					{
+						JOptionPane.showMessageDialog(null, "Doubles!!! Released from Prison.");
+						player1.free();
+						turn=2;
+						break;
+					}
+					else 
+					{
+						player1.setJailRolls(player1.getJailRolls()+1);
+						if(player1.getJailRolls()==3) 
+						{
+							player1.free();
+							JOptionPane.showMessageDialog(null, "You've done your time.  Released from Prison.");
+							turn=2;
+							break;
+						}
+						else 
+						{
+							JOptionPane.showMessageDialog(null, "No Doubles.");
+							turn=2;
+							break;
+						}
+					}
+				}
+				if(p==1) 
+				{
+					player1.setMoney(player1.getMoney()-50);
+					player1.free();
+					JOptionPane.showMessageDialog(null, "Paid $50,  Released from Prison.");
+					turn=2;
+					break;
+				}
+			}
 			roll=Dice.roll();
 			player1.setPosition(board.updatePlayerPosition(roll, player1.getPosition()));
 			if((roll +player1.getTile())>40) 
@@ -96,6 +141,50 @@ public class Game {
 			
 			break;
 		case 2:
+			if(player2.isInJail()) 
+			{
+				Object[] jail =  {"Roll", "Pay $50"};
+				int p=JOptionPane.showOptionDialog(null, ("You are in Jail. "+ (3-player2.getJailRolls()) +" Turns left. "+"Would you like to roll for doubles or pay $50 to get out?"),
+						"In Jail", 
+						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, jail,jail[0]);
+				Arrays.fill(jail,null);
+				if(p==0) 
+				{
+					Dice.roll();
+					if(Dice.isDouble()) 
+					{
+						JOptionPane.showMessageDialog(null, "Doubles!!! Released from Prison.");
+						player2.free();
+						turn=3;
+						break;
+					}
+					else 
+					{
+						player2.setJailRolls(player2.getJailRolls()+1);
+						if(player2.getJailRolls()==3) 
+						{
+							player2.free();
+							JOptionPane.showMessageDialog(null, "You've done your time.  Released from Prison.");
+							turn=3;
+							break;
+						}
+						else 
+						{
+							JOptionPane.showMessageDialog(null, "No Doubles.");
+							turn=3;
+							break;
+						}
+					}
+				}
+				if(p==1) 
+				{
+					player2.setMoney(player2.getMoney()-50);
+					player2.free();
+					JOptionPane.showMessageDialog(null, "Paid $50,  Released from Prison.");
+					turn=3;
+					break;
+				}
+			}
 			roll=Dice.roll();
 			player2.setPosition(board.updatePlayerPosition(roll, player2.getPosition()));
 			if((roll +player2.getTile())>40) 
@@ -119,6 +208,50 @@ public class Game {
 		case 3:
 			if(pNum<3) 
 			{
+				if(player1.isInJail()) 
+				{
+					Object[] jail =  {"Roll", "Pay $50"};
+					int p=JOptionPane.showOptionDialog(null, ("You are in Jail. "+ (3-player1.getJailRolls()) +" Turns left. "+"Would you like to roll for doubles or pay $50 to get out?"),
+							"In Jail", 
+							JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, jail,jail[0]);
+					Arrays.fill(jail,null);
+					if(p==0) 
+					{
+						Dice.roll();
+						if(Dice.isDouble()) 
+						{
+							JOptionPane.showMessageDialog(null, "Doubles!!! Released from Prison.");
+							player1.free();
+							turn=2;
+							break;
+						}
+						else 
+						{
+							player1.setJailRolls(player1.getJailRolls()+1);
+							if(player1.getJailRolls()==3) 
+							{
+								player1.free();
+								JOptionPane.showMessageDialog(null, "You've done your time.  Released from Prison.");
+								turn=2;
+								break;
+							}
+							else 
+							{
+								JOptionPane.showMessageDialog(null, "No Doubles.");
+								turn=2;
+								break;
+							}
+						}
+					}
+					if(p==1) 
+					{
+						player1.setMoney(player1.getMoney()-50);
+						player1.free();
+						JOptionPane.showMessageDialog(null, "Paid $50,  Released from Prison.");
+						turn=2;
+						break;
+					}
+				}
 				roll=Dice.roll();
 				player1.setPosition(board.updatePlayerPosition(roll, player1.getPosition()));
 				if((roll +player1.getTile())>40) 
@@ -143,6 +276,50 @@ public class Game {
 				
 				break;
 				}
+			if(player3.isInJail()) 
+			{
+				Object[] jail =  {"Roll", "Pay $50"};
+				int p=JOptionPane.showOptionDialog(null, ("You are in Jail. "+ (3-player3.getJailRolls()) +" Turns left. "+"Would you like to roll for doubles or pay $50 to get out?"),
+						"In Jail", 
+						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, jail,jail[0]);
+				Arrays.fill(jail,null);
+				if(p==0) 
+				{
+					Dice.roll();
+					if(Dice.isDouble()) 
+					{
+						JOptionPane.showMessageDialog(null, "Doubles!!! Released from Prison.");
+						player3.free();
+						turn=4;
+						break;
+					}
+					else 
+					{
+						player3.setJailRolls(player3.getJailRolls()+1);
+						if(player3.getJailRolls()==3) 
+						{
+							player3.free();
+							JOptionPane.showMessageDialog(null, "You've done your time.  Released from Prison.");
+							turn=4;
+							break;
+						}
+						else 
+						{
+							JOptionPane.showMessageDialog(null, "No Doubles.");
+							turn=4;
+							break;
+						}
+					}
+				}
+				if(p==1) 
+				{
+					player3.setMoney(player3.getMoney()-50);
+					player3.free();
+					JOptionPane.showMessageDialog(null, "Paid $50,  Released from Prison.");
+					turn=4;
+					break;
+				}
+			}
 			roll=Dice.roll();
 			player3.setPosition(board.updatePlayerPosition(roll, player3.getPosition()));
 			if((roll +player3.getTile())>40) 
@@ -166,6 +343,50 @@ public class Game {
 		case 4:
 			if(pNum<4) 
 			{
+				if(player1.isInJail()) 
+				{
+					Object[] jail =  {"Roll", "Pay $50"};
+					int p=JOptionPane.showOptionDialog(null, ("You are in Jail. "+ (3-player1.getJailRolls()) +" Turns left. "+"Would you like to roll for doubles or pay $50 to get out?"),
+							"In Jail", 
+							JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, jail,jail[0]);
+					Arrays.fill(jail,null);
+					if(p==0) 
+					{
+						Dice.roll();
+						if(Dice.isDouble()) 
+						{
+							JOptionPane.showMessageDialog(null, "Doubles!!! Released from Prison.");
+							player1.free();
+							turn=2;
+							break;
+						}
+						else 
+						{
+							player1.setJailRolls(player1.getJailRolls()+1);
+							if(player1.getJailRolls()==3) 
+							{
+								player1.free();
+								JOptionPane.showMessageDialog(null, "You've done your time.  Released from Prison.");
+								turn=2;
+								break;
+							}
+							else 
+							{
+								JOptionPane.showMessageDialog(null, "No Doubles.");
+								turn=2;
+								break;
+							}
+						}
+					}
+					if(p==1) 
+					{
+						player1.setMoney(player1.getMoney()-50);
+						player1.free();
+						JOptionPane.showMessageDialog(null, "Paid $50,  Released from Prison.");
+						turn=2;
+						break;
+					}
+				}
 				roll=Dice.roll();
 				player1.setPosition(board.updatePlayerPosition(roll, player1.getPosition()));
 				if((roll +player1.getTile())>40) 
@@ -190,6 +411,50 @@ public class Game {
 				
 				break;
 				}
+			if(player4.isInJail()) 
+			{
+				Object[] jail =  {"Roll", "Pay $50"};
+				int p=JOptionPane.showOptionDialog(null, ("You are in Jail. "+ (3-player4.getJailRolls()) +" Turns left. "+"Would you like to roll for doubles or pay $50 to get out?"),
+						"In Jail", 
+						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, jail,jail[0]);
+				Arrays.fill(jail,null);
+				if(p==0) 
+				{
+					Dice.roll();
+					if(Dice.isDouble()) 
+					{
+						JOptionPane.showMessageDialog(null, "Doubles!!! Released from Prison.");
+						player4.free();
+						turn=1;
+						break;
+					}
+					else 
+					{
+						player4.setJailRolls(player4.getJailRolls()+1);
+						if(player4.getJailRolls()==3) 
+						{
+							player4.free();
+							JOptionPane.showMessageDialog(null, "You've done your time.  Released from Prison.");
+							turn=1;
+							break;
+						}
+						else 
+						{
+							JOptionPane.showMessageDialog(null, "No Doubles.");
+							turn=1;
+							break;
+						}
+					}
+				}
+				if(p==1) 
+				{
+					player4.setMoney(player4.getMoney()-50);
+					player4.free();
+					JOptionPane.showMessageDialog(null, "Paid $50,  Released from Prison.");
+					turn=1;
+					break;
+				}
+			}
 			roll=Dice.roll();
 			player4.setPosition(board.updatePlayerPosition(roll, player4.getPosition()));
 			if((roll +player4.getTile())>40) 
@@ -3363,7 +3628,8 @@ public class Game {
 				//go to jail
 				JOptionPane.showMessageDialog(null, "Go To Jail, Go Directly To Jail, Do Not Pass GO, Do Not Collect $200.");				
 				o.setPosition(board.updatePlayerPosition(20, o.getPosition()));
-				o.setTile((10)%40);
+				o.setTile((11)%40);
+				o.goToJail();
 				break;
 			case 31:
 				//pacific

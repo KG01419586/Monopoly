@@ -9,11 +9,12 @@ public class Player {
 	private Integer[] position;
 	private Integer tile =1;
 	private Integer doubles=0;
-	private Integer jailRolls;
-	private Boolean inJail;
+	private Integer jailRolls=0;
+	private Boolean inJail=false;
 	private ArrayList<String> properties = new ArrayList<String>() ;
 	private Integer roll;
 	private String name;
+
 	
 
 	public Player() {
