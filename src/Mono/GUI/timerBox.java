@@ -78,8 +78,9 @@ class TimerBox extends JPanel implements MouseListener {
 				isRunning = false;
 			}
 		};
-
+		
 		this.add(timerLabel);
+		
 
 	}
 
@@ -87,6 +88,7 @@ class TimerBox extends JPanel implements MouseListener {
 	public void setTimer(int min) {
 		// work with seconds
 		timeLimit = min * 60;
+		
 		this.refreshTimer();
 
 	}

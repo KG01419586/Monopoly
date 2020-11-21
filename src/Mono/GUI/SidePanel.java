@@ -50,6 +50,8 @@ public class SidePanel extends JPanel implements ActionListener {
 	private JPanel drop = new JPanel();
 	private JComboBox<String> box = new JComboBox<String>();
 	private JTextArea score = new JTextArea();
+	private JPanel EAST_Panel = new JPanel();
+	
 
 
 	public SidePanel() {
@@ -58,7 +60,7 @@ public class SidePanel extends JPanel implements ActionListener {
 
 		propertyButton.addActionListener(this);
 		// EAST
-		JPanel EAST_Panel = new JPanel();
+		//JPanel EAST_Panel = new JPanel();
 		EAST_Panel.setLayout(new BorderLayout());
 		EAST_Panel.setBackground(new Color(204,  255, 238));
 
@@ -74,11 +76,11 @@ public class SidePanel extends JPanel implements ActionListener {
 	    		((JTextComponent) score).setText(Game.getScore());
 	    	}
 	    };
-	    Timer t = new Timer(1000,s);
+	    Timer t = new Timer(2000,s);
 	    t.start();
 
 		
-		EAST_Panel.add(createTimerPane(1), BorderLayout.NORTH);
+		//EAST_Panel.add(createTimerPane(5), BorderLayout.NORTH);
 		EAST_Panel.add(createRollPane(), BorderLayout.SOUTH);
 		EAST_Panel.add(createPropertyPane(), BorderLayout.WEST);
 		EAST_Panel.add(score,BorderLayout.EAST);
@@ -129,8 +131,9 @@ public class SidePanel extends JPanel implements ActionListener {
 		return property;
 	}
 
-	private JPanel createTimerPane(int timeLimit) {
-		return new TimerBox(timeLimit);
+	public void createTimerPane(int timeLimit) {
+		EAST_Panel.add(new TimerBox(timeLimit), BorderLayout.NORTH);	
+		
 	}
 
 

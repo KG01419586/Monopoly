@@ -26,6 +26,8 @@ public class Game {
 	static Player player4 = new Player();
 	static int roll;
 	private static int[] tiles = new int[40];
+	public static int time;
+	
 
 	
 
@@ -58,16 +60,17 @@ public class Game {
 	public static void main(String[] args) 
 	{
 		
-		Startup startup = new Startup(1000,1000);
+		Startup startup = new Startup(600,400);
+
 		
 		
 				
 	}
-	public static  void showBoard() 
+	public static  void showBoard(Integer t) 
 	{
-
-		board.showBoard();
 	
+		board.showBoard(t);
+		
 		
 	}
 	public static void roll() 
@@ -4578,5 +4581,7 @@ public class Game {
 		if(pNum==4) {score=p1+"\n"+p2+"\n"+p3+"\n"+p4;}
 		return score;
 	}
+
+
 }
 

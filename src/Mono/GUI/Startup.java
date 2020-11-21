@@ -695,7 +695,7 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			if (numOfPlayers ==4) {
 				Game.setPlayers(contenders[2].pIcon, p3Field.getText());
 				Game.setPlayers(contenders[3].pIcon, p4Field.getText());}
-			Game.showBoard();
+			Game.showBoard(getTimeLimit());
 			
 		}
 

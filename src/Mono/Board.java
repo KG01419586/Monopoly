@@ -1015,10 +1015,12 @@ public class Board extends JPanel
 		prompts.setText(text);
 	}
 	
-	public void showBoard() 
+	public void showBoard(Integer t) 
 	{
 		
 		frame.setVisible(true);
+		sidepanel.createTimerPane(t);
+		
 	}	
 	public int getHouses(int space) 
 	{
