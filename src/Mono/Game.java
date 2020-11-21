@@ -607,6 +607,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-2);
+						JOptionPane.showMessageDialog(null, "You must pay $2 rent.");
 						switch(tiles[1]) 
 						{
 						case 1:
@@ -625,6 +626,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-10);
+						JOptionPane.showMessageDialog(null, "You must pay $10 rent.");
 						switch(tiles[1]) 
 						{
 						case 1:
@@ -643,6 +645,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-30);
+						JOptionPane.showMessageDialog(null, "You must pay $30 rent.");
 						switch(tiles[1]) 
 						{
 						case 1:
@@ -661,6 +664,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-90);
+						JOptionPane.showMessageDialog(null, "You must pay $90 rent.");
 						switch(tiles[1]) 
 						{
 						case 1:
@@ -679,6 +683,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-160);
+						JOptionPane.showMessageDialog(null, "You must pay $160 rent.");
 						switch(tiles[1]) 
 						{
 						case 1:
@@ -697,6 +702,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-250);
+						JOptionPane.showMessageDialog(null, "You must pay $250 rent.");
 						switch(tiles[1]) 
 						{
 						case 1:
@@ -752,6 +758,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-4);
+						JOptionPane.showMessageDialog(null, "You must pay $4 rent.");
 						switch(tiles[3]) 
 						{
 						case 1:
@@ -770,6 +777,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-20);
+						JOptionPane.showMessageDialog(null, "You must pay $20 rent.");
 						switch(tiles[3]) 
 						{
 						case 1:
@@ -788,6 +796,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-60);
+						JOptionPane.showMessageDialog(null, "You must pay $60 rent.");
 						switch(tiles[3]) 
 						{
 						case 1:
@@ -806,6 +815,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-180);
+						JOptionPane.showMessageDialog(null, "You must pay $180 rent.");
 						switch(tiles[3]) 
 						{
 						case 1:
@@ -824,6 +834,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-320);
+						JOptionPane.showMessageDialog(null, "You must pay $320 rent.");
 						switch(tiles[3]) 
 						{
 						case 1:
@@ -842,6 +853,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-450);
+						JOptionPane.showMessageDialog(null, "You must pay $450 rent.");
 						switch(tiles[3]) 
 						{
 						case 1:
@@ -1052,6 +1064,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-6);
+						JOptionPane.showMessageDialog(null, "You must pay $6 rent.");
 						switch(tiles[6]) 
 						{
 						case 1:
@@ -1070,6 +1083,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-30);
+						JOptionPane.showMessageDialog(null, "You must pay $30 rent.");
 						switch(tiles[6]) 
 						{
 						case 1:
@@ -1088,6 +1102,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-90);
+						JOptionPane.showMessageDialog(null, "You must pay $90 rent.");
 						switch(tiles[6]) 
 						{
 						case 1:
@@ -1106,6 +1121,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-270);
+						JOptionPane.showMessageDialog(null, "You must pay $270 rent.");
 						switch(tiles[6]) 
 						{
 						case 1:
@@ -1124,6 +1140,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-400);
+						JOptionPane.showMessageDialog(null, "You must pay $400 rent.");
 						switch(tiles[6]) 
 						{
 						case 1:
@@ -1142,6 +1159,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-550);
+						JOptionPane.showMessageDialog(null, "You must pay $550 rent.");
 						switch(tiles[6]) 
 						{
 						case 1:
@@ -1198,6 +1216,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-6);
+						JOptionPane.showMessageDialog(null, "You must pay $6 rent.");
 						switch(tiles[8]) 
 						{
 						case 1:
@@ -1216,6 +1235,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-30);
+						JOptionPane.showMessageDialog(null, "You must pay $30 rent.");
 						switch(tiles[8]) 
 						{
 						case 1:
@@ -1234,6 +1254,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-90);
+						JOptionPane.showMessageDialog(null, "You must pay $90 rent.");
 						switch(tiles[8]) 
 						{
 						case 1:
@@ -1252,6 +1273,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-270);
+						JOptionPane.showMessageDialog(null, "You must pay $270 rent.");
 						switch(tiles[8]) 
 						{
 						case 1:
@@ -1270,6 +1292,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-400);
+						JOptionPane.showMessageDialog(null, "You must pay $400 rent.");
 						switch(tiles[8]) 
 						{
 						case 1:
@@ -1288,6 +1311,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-550);
+						JOptionPane.showMessageDialog(null, "You must pay $550 rent.");
 						switch(tiles[8]) 
 						{
 						case 1:
@@ -1340,6 +1364,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-8);
+						JOptionPane.showMessageDialog(null, "You must pay $8 rent.");
 						switch(tiles[9]) 
 						{
 						case 1:
@@ -1358,6 +1383,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-40);
+						JOptionPane.showMessageDialog(null, "You must pay $40 rent.");
 						switch(tiles[9]) 
 						{
 						case 1:
@@ -1376,6 +1402,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-100);
+						JOptionPane.showMessageDialog(null, "You must pay $100 rent.");
 						switch(tiles[9]) 
 						{
 						case 1:
@@ -1394,6 +1421,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-300);
+						JOptionPane.showMessageDialog(null, "You must pay $300 rent.");
 						switch(tiles[9]) 
 						{
 						case 1:
@@ -1412,6 +1440,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-450);
+						JOptionPane.showMessageDialog(null, "You must pay $450 rent.");
 						switch(tiles[9]) 
 						{
 						case 1:
@@ -1430,6 +1459,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-600);
+						JOptionPane.showMessageDialog(null, "You must pay $600 rent.");
 						switch(tiles[9]) 
 						{
 						case 1:
@@ -1486,6 +1516,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-10);
+						JOptionPane.showMessageDialog(null, "You must pay $10 rent.");
 						switch(tiles[11]) 
 						{
 						case 1:
@@ -1504,6 +1535,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-50);
+						JOptionPane.showMessageDialog(null, "You must pay $50 rent.");
 						switch(tiles[11]) 
 						{
 						case 1:
@@ -1523,6 +1555,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-150);
+						JOptionPane.showMessageDialog(null, "You must pay $150 rent.");
 						switch(tiles[11]) 
 						{
 						case 1:
@@ -1541,6 +1574,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-450);
+						JOptionPane.showMessageDialog(null, "You must pay $450 rent.");
 						switch(tiles[11]) 
 						{
 						case 1:
@@ -1559,6 +1593,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-625);
+						JOptionPane.showMessageDialog(null, "You must pay $625 rent.");
 						switch(tiles[11]) 
 						{
 						case 1:
@@ -1577,6 +1612,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-750);
+						JOptionPane.showMessageDialog(null, "You must pay $750 rent.");
 						switch(tiles[11]) 
 						{
 						case 1:
@@ -1717,6 +1753,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-10);
+						JOptionPane.showMessageDialog(null, "You must pay $10 rent.");
 						switch(tiles[13]) 
 						{
 						case 1:
@@ -1735,6 +1772,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-50);
+						JOptionPane.showMessageDialog(null, "You must pay $50 rent.");
 						switch(tiles[13]) 
 						{
 						case 1:
@@ -1753,6 +1791,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-150);
+						JOptionPane.showMessageDialog(null, "You must pay $150 rent.");
 						switch(tiles[13]) 
 						{
 						case 1:
@@ -1771,6 +1810,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-450);
+						JOptionPane.showMessageDialog(null, "You must pay $450 rent.");
 						switch(tiles[13]) 
 						{
 						case 1:
@@ -1789,6 +1829,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-625);
+						JOptionPane.showMessageDialog(null, "You must pay $625 rent.");
 						switch(tiles[13]) 
 						{
 						case 1:
@@ -1807,6 +1848,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-750);
+						JOptionPane.showMessageDialog(null, "You must pay $750 rent.");
 						switch(tiles[13]) 
 						{
 						case 1:
@@ -1859,6 +1901,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-12);
+						JOptionPane.showMessageDialog(null, "You must pay $12 rent.");
 						switch(tiles[14]) 
 						{
 						case 1:
@@ -1877,6 +1920,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-60);
+						JOptionPane.showMessageDialog(null, "You must pay $60 rent.");
 						switch(tiles[14]) 
 						{
 						case 1:
@@ -1895,6 +1939,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-180);
+						JOptionPane.showMessageDialog(null, "You must pay $180 rent.");
 						switch(tiles[14]) 
 						{
 						case 1:
@@ -1913,6 +1958,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-500);
+						JOptionPane.showMessageDialog(null, "You must pay $500 rent.");
 						switch(tiles[14]) 
 						{
 						case 1:
@@ -1931,6 +1977,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-700);
+						JOptionPane.showMessageDialog(null, "You must pay $700 rent.");
 						switch(tiles[14]) 
 						{
 						case 1:
@@ -1949,6 +1996,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-900);
+						JOptionPane.showMessageDialog(null, "You must pay $900 rent.");
 						switch(tiles[14]) 
 						{
 						case 1:
@@ -2154,6 +2202,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-14);
+						JOptionPane.showMessageDialog(null, "You must pay $14 rent.");
 						switch(tiles[16]) 
 						{
 						case 1:
@@ -2172,6 +2221,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-70);
+						JOptionPane.showMessageDialog(null, "You must pay $70 rent.");
 						switch(tiles[16]) 
 						{
 						case 1:
@@ -2190,6 +2240,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-200);
+						JOptionPane.showMessageDialog(null, "You must pay $200 rent.");
 						switch(tiles[16]) 
 						{
 						case 1:
@@ -2208,6 +2259,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-550);
+						JOptionPane.showMessageDialog(null, "You must pay $550 rent.");
 						switch(tiles[16]) 
 						{
 						case 1:
@@ -2226,6 +2278,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-750);
+						JOptionPane.showMessageDialog(null, "You must pay $750 rent.");
 						switch(tiles[16]) 
 						{
 						case 1:
@@ -2244,6 +2297,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-950);
+						JOptionPane.showMessageDialog(null, "You must pay $950 rent.");
 						switch(tiles[16]) 
 						{
 						case 1:
@@ -2300,6 +2354,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-14);
+						JOptionPane.showMessageDialog(null, "You must pay $14 rent.");
 						switch(tiles[18]) 
 						{
 						case 1:
@@ -2318,6 +2373,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-70);
+						JOptionPane.showMessageDialog(null, "You must pay $70 rent.");
 						switch(tiles[18]) 
 						{
 						case 1:
@@ -2336,6 +2392,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-200);
+						JOptionPane.showMessageDialog(null, "You must pay $200 rent.");
 						switch(tiles[18]) 
 						{
 						case 1:
@@ -2354,6 +2411,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-550);
+						JOptionPane.showMessageDialog(null, "You must pay $550 rent.");
 						switch(tiles[18]) 
 						{
 						case 1:
@@ -2372,6 +2430,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-750);
+						JOptionPane.showMessageDialog(null, "You must pay $750 rent.");
 						switch(tiles[18]) 
 						{
 						case 1:
@@ -2390,6 +2449,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-950);
+						JOptionPane.showMessageDialog(null, "You must pay $950 rent.");
 						switch(tiles[18]) 
 						{
 						case 1:
@@ -2442,6 +2502,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-16);
+						JOptionPane.showMessageDialog(null, "You must pay $16 rent.");
 						switch(tiles[19]) 
 						{
 						case 1:
@@ -2460,6 +2521,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-80);
+						JOptionPane.showMessageDialog(null, "You must pay $80 rent.");
 						switch(tiles[19]) 
 						{
 						case 1:
@@ -2478,6 +2540,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-220);
+						JOptionPane.showMessageDialog(null, "You must pay $220 rent.");
 						switch(tiles[19]) 
 						{
 						case 1:
@@ -2496,6 +2559,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-600);
+						JOptionPane.showMessageDialog(null, "You must pay $600 rent.");
 						switch(tiles[19]) 
 						{
 						case 1:
@@ -2514,6 +2578,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-800);
+						JOptionPane.showMessageDialog(null, "You must pay $800 rent.");
 						switch(tiles[19]) 
 						{
 						case 1:
@@ -2532,6 +2597,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-1000);
+						JOptionPane.showMessageDialog(null, "You must pay $1000 rent.");
 						switch(tiles[19]) 
 						{
 						case 1:
@@ -2588,6 +2654,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-18);
+						JOptionPane.showMessageDialog(null, "You must pay $18 rent.");
 						switch(tiles[21]) 
 						{
 						case 1:
@@ -2606,6 +2673,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-90);
+						JOptionPane.showMessageDialog(null, "You must pay $90 rent.");
 						switch(tiles[21]) 
 						{
 						case 1:
@@ -2624,6 +2692,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-250);
+						JOptionPane.showMessageDialog(null, "You must pay $250 rent.");
 						switch(tiles[21]) 
 						{
 						case 1:
@@ -2642,6 +2711,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-700);
+						JOptionPane.showMessageDialog(null, "You must pay $700 rent.");
 						switch(tiles[21]) 
 						{
 						case 1:
@@ -2660,6 +2730,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-875);
+						JOptionPane.showMessageDialog(null, "You must pay $875 rent.");
 						switch(tiles[21]) 
 						{
 						case 1:
@@ -2678,6 +2749,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-1050);
+						JOptionPane.showMessageDialog(null, "You must pay $1050 rent.");
 						switch(tiles[21]) 
 						{
 						case 1:
@@ -2734,6 +2806,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-18);
+						JOptionPane.showMessageDialog(null, "You must pay $18 rent.");
 						switch(tiles[23]) 
 						{
 						case 1:
@@ -2752,6 +2825,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-90);
+						JOptionPane.showMessageDialog(null, "You must pay $90 rent.");
 						switch(tiles[23]) 
 						{
 						case 1:
@@ -2770,6 +2844,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-250);
+						JOptionPane.showMessageDialog(null, "You must pay $250 rent.");
 						switch(tiles[23]) 
 						{
 						case 1:
@@ -2788,6 +2863,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-700);
+						JOptionPane.showMessageDialog(null, "You must pay $700 rent.");
 						switch(tiles[23]) 
 						{
 						case 1:
@@ -2806,6 +2882,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-875);
+						JOptionPane.showMessageDialog(null, "You must pay $875 rent.");
 						switch(tiles[23]) 
 						{
 						case 1:
@@ -2824,6 +2901,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-1050);
+						JOptionPane.showMessageDialog(null, "You must pay $1050 rent.");
 						switch(tiles[23]) 
 						{
 						case 1:
@@ -2876,6 +2954,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-20);
+						JOptionPane.showMessageDialog(null, "You must pay $20 rent.");
 						switch(tiles[24]) 
 						{
 						case 1:
@@ -2894,6 +2973,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-100);
+						JOptionPane.showMessageDialog(null, "You must pay $100 rent.");
 						switch(tiles[24]) 
 						{
 						case 1:
@@ -2912,6 +2992,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-300);
+						JOptionPane.showMessageDialog(null, "You must pay $300 rent.");
 						switch(tiles[24]) 
 						{
 						case 1:
@@ -2930,6 +3011,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-750);
+						JOptionPane.showMessageDialog(null, "You must pay $750 rent.");
 						switch(tiles[24]) 
 						{
 						case 1:
@@ -2948,6 +3030,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-925);
+						JOptionPane.showMessageDialog(null, "You must pay $925 rent.");
 						switch(tiles[24]) 
 						{
 						case 1:
@@ -2966,6 +3049,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-1100);
+						JOptionPane.showMessageDialog(null, "You must pay $1100 rent.");
 						switch(tiles[24]) 
 						{
 						case 1:
@@ -3171,6 +3255,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-22);
+						JOptionPane.showMessageDialog(null, "You must pay $22 rent.");
 						switch(tiles[26]) 
 						{
 						case 1:
@@ -3189,6 +3274,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-110);
+						JOptionPane.showMessageDialog(null, "You must pay $110 rent.");
 						switch(tiles[26]) 
 						{
 						case 1:
@@ -3207,6 +3293,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-330);
+						JOptionPane.showMessageDialog(null, "You must pay $330 rent.");
 						switch(tiles[26]) 
 						{
 						case 1:
@@ -3225,6 +3312,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-800);
+						JOptionPane.showMessageDialog(null, "You must pay $800 rent.");
 						switch(tiles[26]) 
 						{
 						case 1:
@@ -3243,6 +3331,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-975);
+						JOptionPane.showMessageDialog(null, "You must pay $975 rent.");
 						switch(tiles[26]) 
 						{
 						case 1:
@@ -3261,6 +3350,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-1150);
+						JOptionPane.showMessageDialog(null, "You must pay $1150 rent.");
 						switch(tiles[26]) 
 						{
 						case 1:
@@ -3313,6 +3403,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-22);
+						JOptionPane.showMessageDialog(null, "You must pay $22 rent.");
 						switch(tiles[27]) 
 						{
 						case 1:
@@ -3331,6 +3422,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-110);
+						JOptionPane.showMessageDialog(null, "You must pay $110 rent.");
 						switch(tiles[27]) 
 						{
 						case 1:
@@ -3349,6 +3441,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-330);
+						JOptionPane.showMessageDialog(null, "You must pay $330 rent.");
 						switch(tiles[27]) 
 						{
 						case 1:
@@ -3367,6 +3460,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-800);
+						JOptionPane.showMessageDialog(null, "You must pay $800 rent.");
 						switch(tiles[27]) 
 						{
 						case 1:
@@ -3385,6 +3479,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-975);
+						JOptionPane.showMessageDialog(null, "You must pay $975 rent.");
 						switch(tiles[27]) 
 						{
 						case 1:
@@ -3403,6 +3498,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-1150);
+						JOptionPane.showMessageDialog(null, "You must pay $1150 rent.");
 						switch(tiles[27]) 
 						{
 						case 1:
@@ -3543,6 +3639,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-24);
+						JOptionPane.showMessageDialog(null, "You must pay $24 rent.");
 						switch(tiles[29]) 
 						{
 						case 1:
@@ -3561,6 +3658,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-120);
+						JOptionPane.showMessageDialog(null, "You must pay $120 rent.");
 						switch(tiles[29]) 
 						{
 						case 1:
@@ -3579,6 +3677,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-360);
+						JOptionPane.showMessageDialog(null, "You must pay $360 rent.");
 						switch(tiles[29]) 
 						{
 						case 1:
@@ -3597,6 +3696,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-850);
+						JOptionPane.showMessageDialog(null, "You must pay $850 rent.");
 						switch(tiles[29]) 
 						{
 						case 1:
@@ -3615,6 +3715,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-1025);
+						JOptionPane.showMessageDialog(null, "You must pay $1025 rent.");
 						switch(tiles[29]) 
 						{
 						case 1:
@@ -3633,6 +3734,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-1200);
+						JOptionPane.showMessageDialog(null, "You must pay $1200 rent.");
 						switch(tiles[29]) 
 						{
 						case 1:
@@ -3692,6 +3794,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-26);
+						JOptionPane.showMessageDialog(null, "You must pay $26 rent.");
 						switch(tiles[31]) 
 						{
 						case 1:
@@ -3710,6 +3813,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-130);
+						JOptionPane.showMessageDialog(null, "You must pay $130 rent.");
 						switch(tiles[31]) 
 						{
 						case 1:
@@ -3728,6 +3832,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-390);
+						JOptionPane.showMessageDialog(null, "You must pay $390 rent.");
 						switch(tiles[31]) 
 						{
 						case 1:
@@ -3746,6 +3851,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-900);
+						JOptionPane.showMessageDialog(null, "You must pay $900 rent.");
 						switch(tiles[31]) 
 						{
 						case 1:
@@ -3764,6 +3870,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-1100);
+						JOptionPane.showMessageDialog(null, "You must pay $1100 rent.");
 						switch(tiles[31]) 
 						{
 						case 1:
@@ -3782,6 +3889,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-1275);
+						JOptionPane.showMessageDialog(null, "You must pay $1275 rent.");
 						switch(tiles[31]) 
 						{
 						case 1:
@@ -3834,6 +3942,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-26);
+						JOptionPane.showMessageDialog(null, "You must pay $26 rent.");
 						switch(tiles[32]) 
 						{
 						case 1:
@@ -3852,6 +3961,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-130);
+						JOptionPane.showMessageDialog(null, "You must pay $130 rent.");
 						switch(tiles[32]) 
 						{
 						case 1:
@@ -3870,6 +3980,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-390);
+						JOptionPane.showMessageDialog(null, "You must pay $390 rent.");
 						switch(tiles[32]) 
 						{
 						case 1:
@@ -3888,6 +3999,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-900);
+						JOptionPane.showMessageDialog(null, "You must pay $900 rent.");
 						switch(tiles[32]) 
 						{
 						case 1:
@@ -3906,6 +4018,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-1100);
+						JOptionPane.showMessageDialog(null, "You must pay $1100 rent.");
 						switch(tiles[32]) 
 						{
 						case 1:
@@ -3924,6 +4037,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-1275);
+						JOptionPane.showMessageDialog(null, "You must pay $1275 rent.");
 						switch(tiles[32]) 
 						{
 						case 1:
@@ -3980,6 +4094,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-28);
+						JOptionPane.showMessageDialog(null, "You must pay $28 rent.");
 						switch(tiles[34]) 
 						{
 						case 1:
@@ -3998,6 +4113,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-150);
+						JOptionPane.showMessageDialog(null, "You must pay $150 rent.");
 						switch(tiles[34]) 
 						{
 						case 1:
@@ -4016,6 +4132,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-450);
+						JOptionPane.showMessageDialog(null, "You must pay $450 rent.");
 						switch(tiles[34]) 
 						{
 						case 1:
@@ -4034,6 +4151,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-1000);
+						JOptionPane.showMessageDialog(null, "You must pay $1000 rent.");
 						switch(tiles[34]) 
 						{
 						case 1:
@@ -4052,6 +4170,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-1200);
+						JOptionPane.showMessageDialog(null, "You must pay $1200 rent.");
 						switch(tiles[34]) 
 						{
 						case 1:
@@ -4070,6 +4189,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-1400);
+						JOptionPane.showMessageDialog(null, "You must pay $1400 rent.");
 						switch(tiles[34]) 
 						{
 						case 1:
@@ -4279,6 +4399,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-35);
+						JOptionPane.showMessageDialog(null, "You must pay $35 rent.");
 						switch(tiles[37]) 
 						{
 						case 1:
@@ -4297,6 +4418,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-175);
+						JOptionPane.showMessageDialog(null, "You must pay $175 rent.");
 						switch(tiles[37]) 
 						{
 						case 1:
@@ -4315,6 +4437,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-500);
+						JOptionPane.showMessageDialog(null, "You must pay $500 rent.");
 						switch(tiles[37]) 
 						{
 						case 1:
@@ -4333,6 +4456,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-1100);
+						JOptionPane.showMessageDialog(null, "You must pay $1100 rent.");
 						switch(tiles[37]) 
 						{
 						case 1:
@@ -4351,6 +4475,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-1300);
+						JOptionPane.showMessageDialog(null, "You must pay $1300 rent.");
 						switch(tiles[37]) 
 						{
 						case 1:
@@ -4369,6 +4494,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-1500);
+						JOptionPane.showMessageDialog(null, "You must pay $1500 rent.");
 						switch(tiles[37]) 
 						{
 						case 1:
@@ -4426,6 +4552,7 @@ public class Game {
 					{
 					case 0:
 						o.setMoney(o.getMoney()-50);
+						JOptionPane.showMessageDialog(null, "You must pay $50 rent.");
 						switch(tiles[39]) 
 						{
 						case 1:
@@ -4444,6 +4571,7 @@ public class Game {
 						break;
 					case 1:
 						o.setMoney(o.getMoney()-200);
+						JOptionPane.showMessageDialog(null, "You must pay $200 rent.");
 						switch(tiles[39]) 
 						{
 						case 1:
@@ -4462,6 +4590,7 @@ public class Game {
 						break;
 					case 2:
 						o.setMoney(o.getMoney()-600);
+						JOptionPane.showMessageDialog(null, "You must pay $600 rent.");
 						switch(tiles[39]) 
 						{
 						case 1:
@@ -4480,6 +4609,7 @@ public class Game {
 						break;
 					case 3:
 						o.setMoney(o.getMoney()-1400);
+						JOptionPane.showMessageDialog(null, "You must pay $1400 rent.");
 						switch(tiles[39]) 
 						{
 						case 1:
@@ -4498,6 +4628,7 @@ public class Game {
 						break;
 					case 4:
 						o.setMoney(o.getMoney()-1700);
+						JOptionPane.showMessageDialog(null, "You must pay $1700 rent.");
 						switch(tiles[39]) 
 						{
 						case 1:
@@ -4516,6 +4647,7 @@ public class Game {
 						break;
 					case 5:
 						o.setMoney(o.getMoney()-2000);
+						JOptionPane.showMessageDialog(null, "You must pay $2000 rent.");
 						switch(tiles[39]) 
 						{
 						case 1:
