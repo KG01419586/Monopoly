@@ -16,6 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 
+import Mono.Game;
+
 class TimerBox extends JPanel implements MouseListener {
 
 	private Integer timeLimit;
@@ -69,6 +71,7 @@ class TimerBox extends JPanel implements MouseListener {
 						e.printStackTrace();
 					}
 				}
+				Game.gameover();
 				// TODO: when time limit is reached
 
 				hasStarted = false;

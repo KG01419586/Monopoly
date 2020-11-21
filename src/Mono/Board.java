@@ -1,11 +1,14 @@
 package Mono;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
 
 import Mono.GUI.SidePanel; 
 
@@ -28,6 +31,7 @@ public class Board extends JPanel
 	 private int numHouse[] = new int[22] ;
 	 private ButtonGroup bGroup= new ButtonGroup();
 	 
+	 
 	public Board() 
 	{
 
@@ -40,6 +44,9 @@ public class Board extends JPanel
 	    frame.add(map);
 	    frame.add(prompts, BorderLayout.SOUTH);   
 	    frame.add(sidepanel, BorderLayout.EAST);
+
+	    
+	   
 	    frame.pack();
 	    //frame.setVisible(true);	    
 	}  
@@ -982,7 +989,7 @@ public class Board extends JPanel
 
 	}
 	
- 	public void displayBuyHouse(ArrayList<String> properties) 
+ 	public void displayBuyHouse(ArrayList<String> properties,Player o) 
 	{
 		if(properties.size()==0) {JOptionPane.showMessageDialog(noProperty, "You do not have any properties");return;}
 		Object[] array= properties.toArray();
@@ -997,6 +1004,8 @@ public class Board extends JPanel
 				JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, numbers, numbers[0]) +1;
 
 		updateHouses(selected,num);
+		o.setMoney(o.getMoney()-(num*100));
+		o.setPropertyValue(o.getPropertyValue()+(num*100));
 
 		
 	}
@@ -1008,6 +1017,7 @@ public class Board extends JPanel
 	
 	public void showBoard() 
 	{
+		
 		frame.setVisible(true);
 	}	
 	public int getHouses(int space) 

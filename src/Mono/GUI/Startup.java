@@ -64,20 +64,20 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 	JPanel iconPane;
 	JLabel i1 = new JLabel();
 	JLabel i2 = new JLabel();
-	JLabel i3 = new JLabel();
+	//JLabel i3 = new JLabel();
 	JLabel i4 = new JLabel();
 	JLabel i5 = new JLabel();
-	JLabel i6 = new JLabel();
+	//JLabel i6 = new JLabel();
 	JLabel i7 = new JLabel();
-	JLabel i8 = new JLabel();
-	ImageIcon ii1 = new ImageIcon();
+	//JLabel i8 = new JLabel();
+	//ImageIcon ii1 = new ImageIcon();
 	ImageIcon ii2 = new ImageIcon();
-	ImageIcon ii3 = new ImageIcon();
+	//ImageIcon ii3 = new ImageIcon();
 	ImageIcon ii4 = new ImageIcon();
 	ImageIcon ii5 = new ImageIcon();
-	ImageIcon ii6 = new ImageIcon();
+	//ImageIcon ii6 = new ImageIcon();
 	ImageIcon ii7 = new ImageIcon();
-	ImageIcon ii8 = new ImageIcon();
+	//ImageIcon ii8 = new ImageIcon();
 	JComboBox<?> selectTimeLimit;
 	JPanel timerPane = new JPanel();
 	TimerBox timeBox;
@@ -320,84 +320,84 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 
 		i1.setSize(w * 20, h * 20);
 		i2.setSize(w * 20, h * 20);
-		i3.setSize(w * 20, h * 20);
+		//i3.setSize(w * 20, h * 20);
 		i4.setSize(w * 20, h * 20);
 		i5.setSize(w * 20, h * 20);
-		i6.setSize(w * 20, h * 20);
+	//	i6.setSize(w * 20, h * 20);
 		i7.setSize(w * 20, h * 20);
-		i8.setSize(w * 20, h * 20);
+	//	i8.setSize(w * 20, h * 20);
 
-		i1.setBorder(BorderFactory.createRaisedBevelBorder());
+	//	i1.setBorder(BorderFactory.createRaisedBevelBorder());
 		i2.setBorder(BorderFactory.createRaisedBevelBorder());
-		i3.setBorder(BorderFactory.createRaisedBevelBorder());
+	//	i3.setBorder(BorderFactory.createRaisedBevelBorder());
 		i4.setBorder(BorderFactory.createRaisedBevelBorder());
 		i5.setBorder(BorderFactory.createRaisedBevelBorder());
-		i6.setBorder(BorderFactory.createRaisedBevelBorder());
+	//	i6.setBorder(BorderFactory.createRaisedBevelBorder());
 		i7.setBorder(BorderFactory.createRaisedBevelBorder());
-		i8.setBorder(BorderFactory.createRaisedBevelBorder());
+	//	i8.setBorder(BorderFactory.createRaisedBevelBorder());
 
-		i1.setOpaque(true);
+//		i1.setOpaque(true);
 		i2.setOpaque(true);
-		i3.setOpaque(true);
+//		i3.setOpaque(true);
 		i4.setOpaque(true);
 		i5.setOpaque(true);
-		i6.setOpaque(true);
+//		i6.setOpaque(true);
 		i7.setOpaque(true);
-		i8.setOpaque(true);
+//		i8.setOpaque(true);
 
-		i1.setBackground(iconBoxPane.getBackground());
+//		i1.setBackground(iconBoxPane.getBackground());
 		i2.setBackground(iconBoxPane.getBackground());
-		i3.setBackground(iconBoxPane.getBackground());
+//		i3.setBackground(iconBoxPane.getBackground());
 		i4.setBackground(iconBoxPane.getBackground());
 		i5.setBackground(iconBoxPane.getBackground());
-		i6.setBackground(iconBoxPane.getBackground());
+//		i6.setBackground(iconBoxPane.getBackground());
 		i7.setBackground(iconBoxPane.getBackground());
-		i8.setBackground(iconBoxPane.getBackground());
+//		i8.setBackground(iconBoxPane.getBackground());
 
-		ii1 = loadImage("1.png", i1.getWidth() - 10, i1.getHeight() - 10);
+	//	ii1 = loadImage("1.png", i1.getWidth() - 10, i1.getHeight() - 10);
 		ii2 = loadImage("2.png", i1.getWidth() - 10, i1.getHeight() - 10);
-		ii3 = loadImage("3.png", i1.getWidth() - 10, i1.getHeight() - 10);
+	//	ii3 = loadImage("3.png", i1.getWidth() - 10, i1.getHeight() - 10);
 		ii4 = loadImage("4.png", i1.getWidth() - 10, i1.getHeight() - 10);
 		ii5 = loadImage("5.png", i1.getWidth() - 10, i1.getHeight() - 10);
-		ii6 = loadImage("6.png", i1.getWidth() - 10, i1.getHeight() - 10);
+//		ii6 = loadImage("6.png", i1.getWidth() - 10, i1.getHeight() - 10);
 		ii7 = loadImage("7.png", i1.getWidth() - 10, i1.getHeight() - 10);
-		ii8 = loadImage("8.png", i1.getWidth() - 10, i1.getHeight() - 10);
+//		ii8 = loadImage("8.png", i1.getWidth() - 10, i1.getHeight() - 10);
 
-		i1.setIcon(ii1);
+	//	i1.setIcon(ii1);
 		i2.setIcon(ii2);
-		i3.setIcon(ii3);
+//		i3.setIcon(ii3);
 		i4.setIcon(ii4);
 		i5.setIcon(ii5);
-		i6.setIcon(ii6);
+	//	i6.setIcon(ii6);
 		i7.setIcon(ii7);
-		i8.setIcon(ii8);
+	//	i8.setIcon(ii8);
 
-		i1.setHorizontalAlignment(JLabel.CENTER);
+	//	i1.setHorizontalAlignment(JLabel.CENTER);
 		i2.setHorizontalAlignment(JLabel.CENTER);
-		i3.setHorizontalAlignment(JLabel.CENTER);
+	//	i3.setHorizontalAlignment(JLabel.CENTER);
 		i4.setHorizontalAlignment(JLabel.CENTER);
 		i5.setHorizontalAlignment(JLabel.CENTER);
-		i6.setHorizontalAlignment(JLabel.CENTER);
+	//	i6.setHorizontalAlignment(JLabel.CENTER);
 		i7.setHorizontalAlignment(JLabel.CENTER);
-		i8.setHorizontalAlignment(JLabel.CENTER);
+	//	i8.setHorizontalAlignment(JLabel.CENTER);
 
-		i1.addMouseListener(this);
+//		i1.addMouseListener(this);
 		i2.addMouseListener(this);
-		i3.addMouseListener(this);
+//		i3.addMouseListener(this);
 		i4.addMouseListener(this);
 		i5.addMouseListener(this);
-		i6.addMouseListener(this);
+//		i6.addMouseListener(this);
 		i7.addMouseListener(this);
-		i8.addMouseListener(this);
+//		i8.addMouseListener(this);
 
-		iconPane.add(i1);
+//		iconPane.add(i1);
 		iconPane.add(i2);
-		iconPane.add(i3);
+	//	iconPane.add(i3);
 		iconPane.add(i4);
 		iconPane.add(i5);
-		iconPane.add(i6);
+//		iconPane.add(i6);
 		iconPane.add(i7);
-		iconPane.add(i8);
+//		iconPane.add(i8);
 		/*
 		 * 
 		 * clock & combo box
@@ -687,6 +687,7 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 				contenders[3].pName = p4Field.getText();
 			}
 			flag = true;
+			System.out.println(getTimeLimit());
 			this.setVisible(false);
 			Game.setPlayers(contenders[0].pIcon, p1Field.getText());
 			Game.setPlayers(contenders[1].pIcon, p2Field.getText());
@@ -695,7 +696,7 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 				Game.setPlayers(contenders[2].pIcon, p3Field.getText());
 				Game.setPlayers(contenders[3].pIcon, p4Field.getText());}
 			Game.showBoard();
-			//System.out.println(getTimeLimit());
+			
 		}
 
 	}
@@ -735,21 +736,21 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		}
 
 		// right icons
-		if (e.getSource() == i1) {
+	/*	if (e.getSource() == i1) {
 			copyImg("1.png", 45, 45);
 			p = 0;
-			iconPane.hide();
-		}
+			iconPane.hide(); 
+		}*/
 		if (e.getSource() == i2) {
 			copyImg("2.png", 45, 45);
 			p = 0;
 			iconPane.hide();
 		}
-		if (e.getSource() == i3) {
+/*		if (e.getSource() == i3) {
 			copyImg("3.png", 45, 45);
 			p = 0;
 			iconPane.hide();
-		}
+		}*/
 		if (e.getSource() == i4) {
 			copyImg("4.png", 45, 45);
 			p = 0;
@@ -760,21 +761,21 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			p = 0;
 			iconPane.hide();
 		}
-		if (e.getSource() == i6) {
+	/*	if (e.getSource() == i6) {
 			copyImg("6.png", 45, 45);
 			p = 0;
 			iconPane.hide();
-		}
+		}*/
 		if (e.getSource() == i7) {
 			copyImg("7.png", 45, 45);
 			p = 0;
 			iconPane.hide();
 		}
-		if (e.getSource() == i8) {
+	/*	if (e.getSource() == i8) {
 			copyImg("8.png", 45, 45);
 			p = 0;
 			iconPane.hide();
-		}
+		}*/
 
 	}
 
@@ -789,22 +790,22 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		if (e.getSource() == p4Label)
 			p4Label.setBorder(BorderFactory.createLoweredBevelBorder());
 
-		if (e.getSource() == i1)
-			i1.setBorder(BorderFactory.createLoweredBevelBorder());
+	/*	if (e.getSource() == i1)
+			i1.setBorder(BorderFactory.createLoweredBevelBorder());*/
 		if (e.getSource() == i2)
 			i2.setBorder(BorderFactory.createLoweredBevelBorder());
-		if (e.getSource() == i3)
-			i3.setBorder(BorderFactory.createLoweredBevelBorder());
+	/*	if (e.getSource() == i3)
+			i3.setBorder(BorderFactory.createLoweredBevelBorder());*/
 		if (e.getSource() == i4)
 			i4.setBorder(BorderFactory.createLoweredBevelBorder());
 		if (e.getSource() == i5)
 			i5.setBorder(BorderFactory.createLoweredBevelBorder());
-		if (e.getSource() == i6)
-			i6.setBorder(BorderFactory.createLoweredBevelBorder());
+	/*	if (e.getSource() == i6)
+			i6.setBorder(BorderFactory.createLoweredBevelBorder());*/
 		if (e.getSource() == i7)
 			i7.setBorder(BorderFactory.createLoweredBevelBorder());
-		if (e.getSource() == i8)
-			i8.setBorder(BorderFactory.createLoweredBevelBorder());
+	/*	if (e.getSource() == i8)
+			i8.setBorder(BorderFactory.createLoweredBevelBorder());*/
 
 	}
 
@@ -819,22 +820,22 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		if (e.getSource() == p4Label)
 			p4Label.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 
-		if (e.getSource() == i1)
-			i1.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+	/*	if (e.getSource() == i1)
+			i1.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));*/
 		if (e.getSource() == i2)
 			i2.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-		if (e.getSource() == i3)
-			i3.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+	/*	if (e.getSource() == i3)
+			i3.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));*/
 		if (e.getSource() == i4)
 			i4.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		if (e.getSource() == i5)
 			i5.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-		if (e.getSource() == i6)
-			i6.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+	/*	if (e.getSource() == i6)
+			i6.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));*/
 		if (e.getSource() == i7)
 			i7.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-		if (e.getSource() == i8)
-			i8.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+	/*	if (e.getSource() == i8)
+			i8.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));*/
 
 	}
 
@@ -850,22 +851,22 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		if (e.getSource() == p4Label)
 			p4Label.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 
-		if (e.getSource() == i1)
-			i1.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+	/*	if (e.getSource() == i1)
+			i1.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));*/
 		if (e.getSource() == i2)
 			i2.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-		if (e.getSource() == i3)
-			i3.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+	/*	if (e.getSource() == i3)
+			i3.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));*/
 		if (e.getSource() == i4)
 			i4.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 		if (e.getSource() == i5)
 			i5.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-		if (e.getSource() == i6)
-			i6.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+	/*	if (e.getSource() == i6)
+			i6.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));*/
 		if (e.getSource() == i7)
 			i7.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-		if (e.getSource() == i8)
-			i8.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+	/*  if (e.getSource() == i8)
+			i8.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));*/
 
 	}
 
@@ -880,22 +881,22 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		if (e.getSource() == p4Label)
 			p4Label.setBorder(BorderFactory.createRaisedBevelBorder());
 
-		if (e.getSource() == i1)
-			i1.setBorder(BorderFactory.createRaisedBevelBorder());
+	/*	if (e.getSource() == i1)
+			i1.setBorder(BorderFactory.createRaisedBevelBorder());*/
 		if (e.getSource() == i2)
 			i2.setBorder(BorderFactory.createRaisedBevelBorder());
-		if (e.getSource() == i3)
-			i3.setBorder(BorderFactory.createRaisedBevelBorder());
+	/*	if (e.getSource() == i3)
+			i3.setBorder(BorderFactory.createRaisedBevelBorder());*/
 		if (e.getSource() == i4)
 			i4.setBorder(BorderFactory.createRaisedBevelBorder());
 		if (e.getSource() == i5)
 			i5.setBorder(BorderFactory.createRaisedBevelBorder());
-		if (e.getSource() == i6)
-			i6.setBorder(BorderFactory.createRaisedBevelBorder());
+	/*	if (e.getSource() == i6)
+			i6.setBorder(BorderFactory.createRaisedBevelBorder());*/
 		if (e.getSource() == i7)
 			i7.setBorder(BorderFactory.createRaisedBevelBorder());
-		if (e.getSource() == i8)
-			i8.setBorder(BorderFactory.createRaisedBevelBorder());
+	/*	if (e.getSource() == i8)
+			i8.setBorder(BorderFactory.createRaisedBevelBorder());*/
 
 	}
 
@@ -941,7 +942,7 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		return this.contenders;
 	}
 	
-	public Integer getTimeLimit() {
+	public  Integer getTimeLimit() {
 		return Integer.parseInt(((String) (selectTimeLimit.getSelectedItem())).substring(0, 2).trim());
 	}
 	

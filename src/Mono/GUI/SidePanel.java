@@ -27,7 +27,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.Timer;
 import javax.swing.border.EtchedBorder;
+import javax.swing.text.JTextComponent;
 
 import Mono.Board;
 import Mono.Dice;
@@ -45,6 +49,7 @@ public class SidePanel extends JPanel implements ActionListener {
 	private JFrame manage = new JFrame("Property Manager");
 	private JPanel drop = new JPanel();
 	private JComboBox<String> box = new JComboBox<String>();
+	private JTextArea score = new JTextArea();
 
 
 	public SidePanel() {
@@ -60,12 +65,23 @@ public class SidePanel extends JPanel implements ActionListener {
 		JPanel scoreBox = new JPanel();
 		JPanel currenPlayerBox = new JPanel();
 		JPanel decisionBox = new JPanel();
+	    
+		 score.setLineWrap(true);
+	    ActionListener s = new ActionListener() 
+	    {
+	    	public void actionPerformed(ActionEvent e) 
+	    	{
+	    		((JTextComponent) score).setText(Game.getScore());
+	    	}
+	    };
+	    Timer t = new Timer(1000,s);
+	    t.start();
 
-
-		EAST_Panel.add(createTimerPane(10), BorderLayout.NORTH);
-		EAST_Panel.add(createTimerPane(50), BorderLayout.NORTH);
+		
+		EAST_Panel.add(createTimerPane(1), BorderLayout.NORTH);
 		EAST_Panel.add(createRollPane(), BorderLayout.SOUTH);
-		EAST_Panel.add(createPropertyPane(), BorderLayout.CENTER);
+		EAST_Panel.add(createPropertyPane(), BorderLayout.WEST);
+		EAST_Panel.add(score,BorderLayout.EAST);
 
 
 		this.add(EAST_Panel, BorderLayout.EAST);
@@ -102,7 +118,7 @@ public class SidePanel extends JPanel implements ActionListener {
 	}
 	private JPanel createPropertyPane() {
 		property.setLayout(new BoxLayout(property, BoxLayout.LINE_AXIS));
-		property.setPreferredSize(new Dimension(200, 100));
+		property.setPreferredSize(new Dimension(150, 100));
 		property.setBackground(new Color(0X1a1a1a));
 		property.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 

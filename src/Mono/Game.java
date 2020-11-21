@@ -2,6 +2,7 @@ package Mono;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Timer;
 
 import javax.swing.JDialog;
@@ -59,12 +60,14 @@ public class Game {
 		
 		Startup startup = new Startup(1000,1000);
 		
+		
 				
 	}
 	public static  void showBoard() 
 	{
 
 		board.showBoard();
+	
 		
 	}
 	public static void roll() 
@@ -548,16 +551,16 @@ public class Game {
 		switch(turn)
 		{
 		case 1:
-			board.displayBuyHouse(player1.getProperties());
+			board.displayBuyHouse(player1.getProperties(),player1);
 			break;
 		case 2:
-			board.displayBuyHouse(player2.getProperties());
+			board.displayBuyHouse(player2.getProperties(),player2);
 			break;
 		case 3:
-			board.displayBuyHouse(player3.getProperties());
+			board.displayBuyHouse(player3.getProperties(),player3);
 			break;
 		case 4:
-			board.displayBuyHouse(player4.getProperties());
+			board.displayBuyHouse(player4.getProperties(),player4);
 			break;
 			
 		}
@@ -582,6 +585,7 @@ public class Game {
 						if(o.getMoney()>=60) 
 						{
 							o.setMoney(o.getMoney()-60);
+							o.setPropertyValue(o.getPropertyValue()+60);
 							o.setProperties("mediterranean");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[1]=turn;
@@ -726,6 +730,7 @@ public class Game {
 						if(o.getMoney()>=60) 
 						{
 							o.setMoney(o.getMoney()-60);
+							o.setPropertyValue(o.getPropertyValue()+60);
 							o.setProperties("baltic");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[3]=turn;
@@ -872,6 +877,7 @@ public class Game {
 						if(o.getMoney()>=200) 
 						{
 							o.setMoney(o.getMoney()-200);
+							o.setPropertyValue(o.getPropertyValue()+200);
 							o.setProperties("reading");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[5]=turn;
@@ -1024,6 +1030,7 @@ public class Game {
 						if(o.getMoney()>=100) 
 						{
 							o.setMoney(o.getMoney()-100);
+							o.setPropertyValue(o.getPropertyValue()+100);
 							o.setProperties("oriental");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[6]=turn;
@@ -1169,6 +1176,7 @@ public class Game {
 						if(o.getMoney()>=100) 
 						{
 							o.setMoney(o.getMoney()-100);
+							o.setPropertyValue(o.getPropertyValue()+100);
 							o.setProperties("vermont");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[8]=turn;
@@ -1310,6 +1318,7 @@ public class Game {
 						if(o.getMoney()>=120) 
 						{
 							o.setMoney(o.getMoney()-120);
+							o.setPropertyValue(o.getPropertyValue()+120);
 							o.setProperties("connecticut");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[9]=turn;
@@ -1455,6 +1464,7 @@ public class Game {
 						if(o.getMoney()>=140) 
 						{
 							o.setMoney(o.getMoney()-140);
+							o.setPropertyValue(o.getPropertyValue()+140);
 							o.setProperties("st. charles");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[11]=turn;
@@ -1597,6 +1607,7 @@ public class Game {
 						if(o.getMoney()>=150) 
 						{
 							o.setMoney(o.getMoney()-150);
+							o.setPropertyValue(o.getPropertyValue()+150);
 							o.setProperties("electric");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[12]=turn;
@@ -1684,6 +1695,7 @@ public class Game {
 						if(o.getMoney()>=140) 
 						{
 							o.setMoney(o.getMoney()-140);
+							o.setPropertyValue(o.getPropertyValue()+140);
 							o.setProperties("states");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[13]=turn;
@@ -1825,6 +1837,7 @@ public class Game {
 						if(o.getMoney()>=160) 
 						{
 							o.setMoney(o.getMoney()-160);
+							o.setPropertyValue(o.getPropertyValue()+160);
 							o.setProperties("virginia");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[14]=turn;
@@ -1966,6 +1979,7 @@ public class Game {
 						if(o.getMoney()>=200) 
 						{
 							o.setMoney(o.getMoney()-200);
+							o.setPropertyValue(o.getPropertyValue()+200);
 							o.setProperties("penn");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[15]=turn;
@@ -2118,6 +2132,7 @@ public class Game {
 						if(o.getMoney()>=180) 
 						{
 							o.setMoney(o.getMoney()-180);
+							o.setPropertyValue(o.getPropertyValue()+180);
 							o.setProperties("st. james");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[16]=turn;
@@ -2263,6 +2278,7 @@ public class Game {
 						if(o.getMoney()>=180) 
 						{
 							o.setMoney(o.getMoney()-180);
+							o.setPropertyValue(o.getPropertyValue()+180);
 							o.setProperties("tennessee");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[18]=turn;
@@ -2404,6 +2420,7 @@ public class Game {
 						if(o.getMoney()>=200) 
 						{
 							o.setMoney(o.getMoney()-200);
+							o.setPropertyValue(o.getPropertyValue()+200);
 							o.setProperties("new york");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[19]=turn;
@@ -2549,6 +2566,7 @@ public class Game {
 						if(o.getMoney()>=220) 
 						{
 							o.setMoney(o.getMoney()-220);
+							o.setPropertyValue(o.getPropertyValue()+220);
 							o.setProperties("kentucky");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[21]=turn;
@@ -2694,6 +2712,7 @@ public class Game {
 						if(o.getMoney()>=220) 
 						{
 							o.setMoney(o.getMoney()-220);
+							o.setPropertyValue(o.getPropertyValue()+220);
 							o.setProperties("indiana");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[23]=turn;
@@ -2835,6 +2854,7 @@ public class Game {
 						if(o.getMoney()>=240) 
 						{
 							o.setMoney(o.getMoney()-240);
+							o.setPropertyValue(o.getPropertyValue()+240);
 							o.setProperties("Illinois");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[24]=turn;
@@ -2976,6 +2996,7 @@ public class Game {
 						if(o.getMoney()>=200) 
 						{
 							o.setMoney(o.getMoney()-200);
+							o.setPropertyValue(o.getPropertyValue()+200);
 							o.setProperties("bo");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[25]=turn;
@@ -3128,6 +3149,7 @@ public class Game {
 						if(o.getMoney()>=260) 
 						{
 							o.setMoney(o.getMoney()-260);
+							o.setPropertyValue(o.getPropertyValue()+260);
 							o.setProperties("atlantic");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[26]=turn;
@@ -3269,6 +3291,7 @@ public class Game {
 						if(o.getMoney()>=260) 
 						{
 							o.setMoney(o.getMoney()-260);
+							o.setPropertyValue(o.getPropertyValue()+260);
 							o.setProperties("ventnor");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[27]=turn;
@@ -3411,6 +3434,7 @@ public class Game {
 						if(o.getMoney()>=150) 
 						{
 							o.setMoney(o.getMoney()-150);
+							o.setPropertyValue(o.getPropertyValue()+150);
 							o.setProperties("water");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[28]=turn;
@@ -3497,6 +3521,7 @@ public class Game {
 						if(o.getMoney()>=280) 
 						{
 							o.setMoney(o.getMoney()-280);
+							o.setPropertyValue(o.getPropertyValue()+280);
 							o.setProperties("marvin");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[29]=turn;
@@ -3645,6 +3670,7 @@ public class Game {
 						if(o.getMoney()>=300) 
 						{
 							o.setMoney(o.getMoney()-300);
+							o.setPropertyValue(o.getPropertyValue()+300);
 							o.setProperties("pacific");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[31]=turn;
@@ -3786,6 +3812,7 @@ public class Game {
 						if(o.getMoney()>=300) 
 						{
 							o.setMoney(o.getMoney()-300);
+							o.setPropertyValue(o.getPropertyValue()+300);
 							o.setProperties("north carolina");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[32]=turn;
@@ -3931,6 +3958,7 @@ public class Game {
 						if(o.getMoney()>=320) 
 						{
 							o.setMoney(o.getMoney()-320);
+							o.setPropertyValue(o.getPropertyValue()+320);
 							o.setProperties("pennsylvania");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[34]=turn;
@@ -4072,6 +4100,7 @@ public class Game {
 						if(o.getMoney()>=200) 
 						{
 							o.setMoney(o.getMoney()-200);
+							o.setPropertyValue(o.getPropertyValue()+200);
 							o.setProperties("short");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[35]=turn;
@@ -4228,6 +4257,7 @@ public class Game {
 						if(o.getMoney()>=350) 
 						{
 							o.setMoney(o.getMoney()-350);
+							o.setPropertyValue(o.getPropertyValue()+350);
 							o.setProperties("park");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[37]=turn;
@@ -4374,6 +4404,7 @@ public class Game {
 						if(o.getMoney()>=400) 
 						{
 							o.setMoney(o.getMoney()-400);
+							o.setPropertyValue(o.getPropertyValue()+400);
 							o.setProperties("board");
 							JOptionPane.showMessageDialog(null, "Purchased.");
 							tiles[39]=turn;
@@ -4506,4 +4537,46 @@ public class Game {
 				
 		}
 	}
+
+	public static void gameover() 
+	{
+		int player1Total=player1.getMoney()+player1.getPropertyValue();
+		int player2Total=player2.getMoney()+player2.getPropertyValue();
+		int player3Total=player3.getMoney()+player3.getPropertyValue();
+		int player4Total=player4.getMoney()+player4.getPropertyValue();
+		int[] players = {player1Total,player2Total,player3Total,player4Total};
+		int max=player1Total;
+		String winner=new String();
+		for(int i=1; i<players.length; i++) 
+		{
+			if(players[i]>max) 
+			{
+				max=players[i];
+			}
+		}
+		if(max==player1Total) {winner=player1.getName();}
+		if(max==player2Total) {winner=player2.getName();}
+		if(max==player3Total &&pNum>2) {winner=player3.getName();}
+		if(max==player4Total &&pNum>3) {winner=player4.getName();}
+		JOptionPane.showMessageDialog(null, "Times Up!!!  The winner is "+winner +" with "+max+" in cash and property.  Thanks for Playing!");
+		System.exit(0);
+	}
+
+	public static String getScore() 
+	{
+		String p1=new String();
+		String p2=new String();
+		String p3=new String();
+		String p4=new String();
+		String score=new String();
+		p1= player1.getName()+ ": $"+player1.getMoney();
+		p2=player2.getName()+ ": $"+player2.getMoney();
+		if(pNum>2) {p3=player3.getName()+ ": $"+player3.getMoney();}
+		if(pNum>3) {p4=player4.getName()+ ": $"+player4.getMoney();}
+		if(pNum<3) {score=p1+"\n"+p2;}
+		if(pNum==3) {score=p1+"\n"+p2+"\n"+p3;}
+		if(pNum==4) {score=p1+"\n"+p2+"\n"+p3+"\n"+p4;}
+		return score;
+	}
 }
+

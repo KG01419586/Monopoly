@@ -6,6 +6,7 @@ public class Player {
 
 	private String token;
 	private Integer money =2000;
+	private Integer propertyValue=0;
 	private Integer[] position;
 	private Integer tile =1;
 	private Integer doubles=0;
@@ -66,7 +67,15 @@ public class Player {
 	}
 
 	public void setMoney(int m) {
-		this.money += m;
+		this.money = m;
+	}
+	public Integer getPropertyValue() 
+	{
+		return this.propertyValue;
+	}
+	public void setPropertyValue(Integer x) 
+	{
+		this.propertyValue=x;
 	}
 
 	public void payRent(int rent, Player landLord) {
