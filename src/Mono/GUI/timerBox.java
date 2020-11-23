@@ -33,7 +33,7 @@ class TimerBox extends JPanel implements MouseListener {
 		this.setBackground(new Color(0X1a1a1a));
 		this.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 
-		Font timerFont = null;
+		Font timerFont = new Font("Courier",Font.PLAIN,52);
 		try {
 			timerFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/Mono/GUI/Font/DS-DIGIT.TTF"));
 		} catch (FontFormatException e) {

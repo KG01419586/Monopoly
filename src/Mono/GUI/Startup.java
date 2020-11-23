@@ -249,7 +249,7 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 		addButton.setSize(w * 15, h * 15);
 		addButton.setLocation(w * 60, h * 35);
 		addButton.setBackground(new Color(0X1a1a1a));
-		addButton.setIcon(new ImageIcon("src/Mono/GUI/Img/add.png"));
+		addButton.setIcon(new ImageIcon(getClass().getResource("Img/add.png")));
 		addButton.setHorizontalTextPosition(JButton.CENTER);
 		addButton.setForeground(Color.lightGray);
 		addButton.addActionListener(this);
@@ -900,13 +900,14 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 
 	}
 
-	static ImageIcon loadImage(String src, Integer Width, Integer Height) {
+	 ImageIcon loadImage(String src, Integer Width, Integer Height) {
 		if (Width == 0 && Height == 0)
-			return new ImageIcon("src/Mono/GUI/Img/" + src);
+			return new ImageIcon(getClass().getResource("Img/" + src));
 		BufferedImage img = new BufferedImage(Width, Height, BufferedImage.TYPE_INT_ARGB);
 		Graphics2D g = img.createGraphics();
 		g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-		g.drawImage(new ImageIcon("src/Mono/GUI/Img/" + src).getImage(), 0, 0, Width, Height, null);
+		//ImageIcon mono2 = new ImageIcon(getClass().getResource("Img/"+src));
+		g.drawImage(new ImageIcon(getClass().getResource("Img/" + src)).getImage(), 0, 0, Width, Height, null);
 		g.dispose();
 		return new ImageIcon(img);
 

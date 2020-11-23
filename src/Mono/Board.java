@@ -3,12 +3,15 @@ package Mono;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.*;
 import javax.swing.text.JTextComponent;
+
+import com.sun.tools.javac.Main;
 
 import Mono.GUI.SidePanel; 
 
@@ -18,13 +21,28 @@ public class Board extends JPanel
 	 private JFrame noProperty = new JFrame("Property");
 	 private JPanel map = new JPanel();
 	 private JTextField prompts=new JTextField();
-	 private ImageIcon mono = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/monopoly_board.jpg").getImage().getScaledInstance(1020, 1020, Image.SCALE_SMOOTH));
-	 private ImageIcon house = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/house.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
-	 private ImageIcon hotel = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/hotel.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
-	 private ImageIcon boot = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/boot.png").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
-	 private ImageIcon ship = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/ship.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
-	 private ImageIcon iron = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/iron.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
-	 private ImageIcon dog = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/dog.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
+	// private URL mono1 =Main.class.getResource("src/Mono/GUI/Img/boot.png");
+	// private ImageIcon mono1 = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/monopoly_board.jpg").getImage().getScaledInstance(1020, 1020, Image.SCALE_SMOOTH));
+	 private ImageIcon mono2 = new ImageIcon(getClass().getResource("GUI/Img/monopoly_board.jpg"));
+	 private ImageIcon mono = new ImageIcon((mono2).getImage().getScaledInstance(1020, 1020, Image.SCALE_SMOOTH));
+	 private ImageIcon house2 = new ImageIcon(getClass().getResource("GUI/Img/house.jpg"));
+	 private ImageIcon house = new ImageIcon((house2).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+	 //private ImageIcon house = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/house.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
+	 private ImageIcon hotel2 = new ImageIcon(getClass().getResource("GUI/Img/hotel.jpg"));
+	 private ImageIcon hotel = new ImageIcon((hotel2).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+	// private ImageIcon hotel = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/hotel.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
+	 private ImageIcon boot2 = new ImageIcon(getClass().getResource("GUI/Img/boot.png"));
+	 private ImageIcon boot = new ImageIcon((boot2).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+	 //private ImageIcon boot = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/boot.png").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
+	 private ImageIcon ship2 = new ImageIcon(getClass().getResource("GUI/Img/ship.jpg"));
+	 private ImageIcon ship = new ImageIcon((ship2).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+	 //private ImageIcon ship = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/ship.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
+	 private ImageIcon iron2 = new ImageIcon(getClass().getResource("GUI/Img/iron.jpg"));
+	 private ImageIcon iron = new ImageIcon((iron2).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+	 //private ImageIcon iron = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/iron.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
+	 private ImageIcon dog2 = new ImageIcon(getClass().getResource("GUI/Img/dog.jpg"));
+	 private ImageIcon dog = new ImageIcon((dog2).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH));
+	 //private ImageIcon dog = new ImageIcon(new ImageIcon("src/Mono/GUI/Img/dog.jpg").getImage().getScaledInstance(20,20,Image.SCALE_SMOOTH));
 	 private JLabel label = new JLabel(mono);
 	 private JButton[][] gridSpots = new JButton[48][48];  
 	 private SidePanel sidepanel = new SidePanel();
@@ -742,7 +760,7 @@ public class Board extends JPanel
 		for(int i=0; i<roll; i++) 
 		{
 
-			//try 
+			//\\try 
 			//{
 		//		TimeUnit.SECONDS.sleep(1);
 		//	} 
