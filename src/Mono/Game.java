@@ -57,15 +57,7 @@ public class Game {
 		// TODO:
 	}
 
-	public static void main(String[] args) 
-	{
-		
-		Startup startup = new Startup(600,400);
 
-		
-		
-				
-	}
 	public static  void showBoard(Integer t) 
 	{
 	

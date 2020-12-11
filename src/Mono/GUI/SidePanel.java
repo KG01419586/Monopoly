@@ -37,10 +37,11 @@ import Mono.Board;
 import Mono.Dice;
 import Mono.Game;
 import Mono.Player;
+import Mono.elements;
 
 
 
-public class SidePanel extends JPanel implements ActionListener {
+public class SidePanel extends JPanel implements ActionListener, elements {
 	public JButton rollButton = new JButton("ROLL!");
 	public JButton propertyButton = new JButton("Manage Properties");
 	private int roll;
@@ -64,9 +65,7 @@ public class SidePanel extends JPanel implements ActionListener {
 		EAST_Panel.setLayout(new BorderLayout());
 		EAST_Panel.setBackground(new Color(204,  255, 238));
 
-		JPanel scoreBox = new JPanel();
-		JPanel currenPlayerBox = new JPanel();
-		JPanel decisionBox = new JPanel();
+		createGUI();
 	    
 		 score.setLineWrap(true);
 	    ActionListener s = new ActionListener() 
@@ -152,6 +151,16 @@ public class SidePanel extends JPanel implements ActionListener {
 
 		}
 	}
+
+	@Override
+	public void createGUI() {
+		JPanel scoreBox = new JPanel();
+		JPanel currenPlayerBox = new JPanel();
+		JPanel decisionBox = new JPanel();
+		
+	}
+
+	
 
 
 }

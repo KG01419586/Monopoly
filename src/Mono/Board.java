@@ -15,7 +15,7 @@ import com.sun.tools.javac.Main;
 
 import Mono.GUI.SidePanel; 
 
-public class Board extends JPanel 
+public class Board extends JPanel implements elements
 {  
 	 private JFrame frame = new JFrame("Monopoly");
 	 private JFrame noProperty = new JFrame("Property");
@@ -1033,10 +1033,12 @@ public class Board extends JPanel
 		prompts.setText(text);
 	}
 	
+	public void createGUI() {frame.setVisible(true);}
+	
 	public void showBoard(Integer t) 
 	{
 		
-		frame.setVisible(true);
+		createGUI();
 		sidepanel.createTimerPane(t);
 		
 	}	

@@ -26,8 +26,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import Mono.Game;
+import Mono.elements;
 
-public class Startup extends JFrame implements ActionListener, MouseListener {
+public class Startup extends JFrame implements ActionListener, MouseListener, elements {
 
 	Contenders[] contenders;
 
@@ -82,14 +83,14 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 	JPanel timerPane = new JPanel();
 	TimerBox timeBox;
 
-	public Startup(Integer Width, Integer Height) {
+	public void createGUI() {
 
 		// startup frame
 		new JFrame("Monopoly");
 		this.setLayout(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
-		this.setSize(Width, Height);
+		this.setSize(600, 400);
 		this.setLocationRelativeTo(null);
 
 		this.add(playersInfoPane());
@@ -962,4 +963,6 @@ public class Startup extends JFrame implements ActionListener, MouseListener {
 			pColor = color;
 		}
 	}
+
+
 }
