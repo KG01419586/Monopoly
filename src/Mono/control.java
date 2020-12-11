@@ -10,7 +10,7 @@ public class control {
 		gui= new Startup();
 	}
 	
-	public void createGUI() 
+	public void startGUI() 
 	{
 		gui.createGUI();
 	}
