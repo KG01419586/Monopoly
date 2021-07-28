@@ -1,0 +1,227 @@
+commit bb8c051ed9c35d3cab49a6413d6058d0e16619a1
+Author: Lomax9898 <70455636+Lomax9898@users.noreply.github.com>
+Date:   Sun Nov 22 17:28:02 2020 -0500
+
+    Sequence Diagrams
+
+commit d9eebc789024c676620fe2aceec5278b45c09f51
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sat Nov 21 21:01:06 2020 -0500
+
+    take 2
+
+commit 5e2c1199681bf3962c150b5d3851a89147f01aac
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sat Nov 21 20:59:48 2020 -0500
+
+    Moved board image location
+
+commit c9d3fb99bf0a7b0e9519a9b82cd8e7db6f04d99d
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sat Nov 21 11:45:16 2020 -0500
+
+    Added dialogs for paying rent on normal properties.
+
+commit 587b0b1d86340d67fa14ce1fc7b9d4666a0aa320
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sat Nov 21 11:25:00 2020 -0500
+
+    Timer is now populated by the selected time at startup.
+
+commit 6185fd9598b9a0c6e51391cd65fc9adecfbf9f43
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sat Nov 21 09:56:37 2020 -0500
+
+    Added Scoreboard, added gameover screen.
+
+commit 5b4eb2a593bf3686416d094c211d33efd06a58db
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sat Nov 21 07:26:31 2020 -0500
+
+    Implemented Get out of Jail procedures. Fixed bug with Go to Jail.
+
+commit 50c529542da952a02cf9946684c0b3e0f65a7bb9
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sat Nov 21 06:10:01 2020 -0500
+
+    Added Go To Jail tile implementation. Still need to implement get out of
+    jail process.
+
+commit 5ef5ec831b7e05723547d62c3f403c0fe9617d94
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sat Nov 21 05:55:09 2020 -0500
+
+    Adjusted the Dialog for the Utilities and fixed a bug with the Player
+    properties arrays
+
+commit 992a46db2bb42abb84769190ab41fc67c8b85c94
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sat Nov 21 05:31:44 2020 -0500
+
+    Implemented game behavior for all board tiles except Go To Jail.
+
+commit 177d72a52ec9dafb86f7ff233c0638ebc1f9125e
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sat Nov 21 01:06:58 2020 -0500
+
+    Reverted Sidepanel changes.
+
+commit 76c5d1e1baeaf231985351ab1b3b1b6e1fa4135c
+Author: MiladKarimi307 <miladkarimi307@gmail.com>
+Date:   Fri Nov 20 03:57:10 2020 -0500
+
+    small fix
+
+commit 3b3e185297ed54dcff50bbde91e01a88e618e4aa
+Author: MiladKarimi307 <miladkarimi307@gmail.com>
+Date:   Fri Nov 20 03:37:36 2020 -0500
+
+    GUI touch
+
+commit 4bdd904bf2cb2433c089a3d4b98dd209d1c21552
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Fri Nov 20 03:04:10 2020 -0500
+
+    Implemented logic for passing go
+
+commit 7570793049bdb79a33cadf53eda616761a267120
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Fri Nov 20 02:41:56 2020 -0500
+
+    Implemented Property management dialogs to add houses/hotels for owned
+    properties.
+
+commit 635730e94ff6ec47c9a3be5370818db605216765
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Thu Nov 19 03:39:05 2020 -0500
+
+    Parsed Startup GUI inputs into fields for Player creation and
+    implemented method in Game to create players and process turn order
+    using player attributes.
+
+commit 9e040824cfa2b4ebae24c68608559bdb4be9233b
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Wed Nov 18 03:57:18 2020 -0500
+
+    Added ActionListeners to SidePanel buttons.
+    
+    Added Property Management button to sidepanel.  Created main() in Game
+    class.  Began work on turn switching, rolling and doubles logic.
+
+commit 9063972f4dfd2d26734401a156f4e4a6a911f8ea
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Tue Nov 17 01:14:40 2020 -0500
+
+    Implemented updateHouses() to board to add houses to property tiles.
+
+commit 4355bf74cabdd8a2df8b4e574f8e56d3ce3f838e
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Mon Nov 16 23:49:52 2020 -0500
+
+    Implemented Roll Button functionality and updated Mono_Test.java for
+    testing functionality.
+
+commit b4f1a2b411cf7466479fd47771764b11f5d26a05
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Mon Nov 16 05:04:20 2020 -0500
+
+    Implemented updatePlayerPosition() to Board to update the player token
+    position on board after dice roll.
+
+commit 6b5c3bc1abdc3728895cf401549c0cdd4cc7db2f
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sun Nov 15 04:36:08 2020 -0500
+
+    added a couple lines to Board and Mono_Test to test the board with side
+    panel
+
+commit b9581583c13bdbcc635f7e771e770a4558ab5814
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sun Nov 15 04:01:03 2020 -0500
+
+    Added a JTextField and updateText() to Board for game prompts.
+
+commit a0dac818264bc0c1846e725aeff8f1d33b7768ee
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Sun Nov 15 03:12:20 2020 -0500
+
+    Reworked Board, began work on update methods for icons.
+
+commit 569a8964feb327bdab211dfc907393903aa16af2
+Author: Milad Karimi <miliboy307@gmail.com>
+Date:   Fri Nov 13 00:39:51 2020 -0500
+
+    input error indicator added for text fields and icons
+
+commit 3c0454910d196fcd759126a66978a4fcdf843b67
+Author: Milad Karimi <miliboy307@gmail.com>
+Date:   Wed Nov 11 04:07:12 2020 -0500
+
+    startup gui and side panel
+
+commit ad8465266983b1e1947fb6cdebed390cb64c4d51
+Author: Milad Karimi <miliboy307@gmail.com>
+Date:   Tue Nov 10 09:53:56 2020 -0500
+
+    minor fix
+
+commit f360f61711ef07e7cbfb950069bcc99e6027e4c3
+Author: Milad Karimi <miliboy307@gmail.com>
+Date:   Tue Nov 10 09:47:43 2020 -0500
+
+    Dice, Game & Player classes
+
+commit ba3446f2a409afdeaa3001e99799d9bd686e7ebe
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Tue Nov 10 03:25:02 2020 -0500
+
+    Added additional board elements
+
+commit 81bbe590bc226ddeb969c000b69dc2fbf7f1adb8
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Tue Nov 10 02:40:39 2020 -0500
+
+    First Commit, began work on gui
+
+commit b0c92e155af490d2bfa9e5e2997ddbcfbf76ed01
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Tue Nov 10 02:38:21 2020 -0500
+
+    removed p1
+
+commit 2f56be8b92c41b79d6901fa211265dabc349a5a8
+Author: Kevin <Kevin@10.0.0.116>
+Date:   Mon Sep 28 14:43:15 2020 -0400
+
+    Overview.txt
+
+commit 8303ac12dce0ccd3bdc2e38025db73ac227acdd1
+Author: Kevin <Kevin@10.0.0.116>
+Date:   Fri Sep 25 19:08:28 2020 -0400
+
+    Added the add, subtract, and negate tests as well as the methods
+
+commit 28ebf2fdc5361c3457952f2ba585c5b1da70920c
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Fri Sep 25 16:14:44 2020 -0400
+
+    Added test for scale, added code for scale
+
+commit 59ff6d6f9518708f66dbe1e7b9bf5e12f20a001b
+Author: Milad Karimi <miliboy307@gmail.com>
+Date:   Fri Sep 25 03:55:07 2020 -0400
+
+    equals & toString methods
+
+commit 08723d588924b93d321dbec165c0a3834ab5bae0
+Author: Milad Karimi <miliboy307@gmail.com>
+Date:   Fri Sep 25 01:24:06 2020 -0400
+
+    test for equals & toString
+
+commit d0a3cd2288d0825bf2c12dbc45b7de07645ebe47
+Author: KG01419586 <70454638+KG01419586@users.noreply.github.com>
+Date:   Thu Sep 24 07:04:50 2020 -0400
+
+    Initial Commit: created tests for magnitude and dot product.  Created
+    constructors and methods to test.
